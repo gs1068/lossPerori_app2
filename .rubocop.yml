@@ -1,0 +1,18 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+AllCops:
+  TargetRubyVersion: 2.6.6
+  Exclude:
+    - "db/**/*"
+    - "bin/*"
+    - "node_modules/node-sass/src/libsass/**/*"
+    - "config/**/*"
+    - "lib/tasks/*"
+    - "vendor/**/*"
+    - "path/ruby"
+    - "spec/*"
+    - "node_modules/**/*"
+    - "public/**/*"
+    - "tmp/**/*"
+    - "log/**/*"
