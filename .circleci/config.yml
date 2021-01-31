@@ -62,7 +62,7 @@ jobs:
           paths:
             - .
 
-  deploy_prod:
+  deploy:
     docker:
       - image: circleci/ruby:2.6.6-node-browsers
     working_directory: ~/lossPerori
