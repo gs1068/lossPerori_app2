@@ -16,6 +16,4 @@ test:
 
 production:
   <<: *default
-  database: lossPerori_production
-  username: lossPerori
-  password: <%= ENV['LOSSPERORI_DATABASE_PASSWORD'] %>
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
