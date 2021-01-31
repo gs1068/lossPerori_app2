@@ -9,20 +9,17 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.6-node
         environment:
-          RAILS_ENV: test
           BUNDLE_PATH: vendor/bundle
           BUNDLER_VERSION: 1.17.2
+          RAILS_ENV: test
           DB_HOST: 127.0.0.1
           DB_USERNAME: "root"
-          DB_PASSWORD: "password"
+          DB_PASSWORD: ""
       - image: circleci/mysql:5.6
         environment:
           MYSQL_DATABASE: lossPerori_test
           MYSQL_USER: "root"
-          MYSQL_HOST: 127.0.0.1
           MYSQL_ROOT_PASSWORD: "password"
-          MYSQL_PASSWORD: dbuser
-          MYSQL_ROOT_HOST: "%"
     steps:
       - run: gem install bundler -v $BUNDLER_VERSION
       - checkout
@@ -42,8 +39,10 @@ jobs:
           key: yarn-v1-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run:
+          command: bin/rake db:create db:migrate
+          environment:
+            RAILS_ENV: test
 
       - run: bin/bundle exec rubocop
       - run:
