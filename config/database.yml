@@ -21,3 +21,4 @@ production:
   <<: *default
   database: lossPerori_production
   url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
+gd
