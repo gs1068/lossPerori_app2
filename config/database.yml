@@ -15,7 +15,7 @@ test:
   username: test_root
   password: password
   database: docker_test
-  host: localhost
+  host: 127.0.0.1
 
 production:
   <<: *default
