@@ -39,10 +39,8 @@ jobs:
           key: yarn-v1-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-      - run:
-          command: bin/rake db:create db:migrate
-          environment:
-            RAILS_ENV: test
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:migrate
 
       - run: bin/bundle exec rubocop
       - run:
