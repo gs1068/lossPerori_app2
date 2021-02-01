@@ -12,10 +12,10 @@ development:
 
 test:
   <<: *default
+  database: docker_test
   username: test_root
   password: password
-  database: docker_test
-  host: 127.0.0.1
+  host: test-db
 
 production:
   <<: *default
