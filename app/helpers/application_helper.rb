@@ -1,9 +1,9 @@
 module ApplicationHelper
   def full_title(page_title)
     if page_title.blank?
-      "LossPerori"
+      "ロスペロリ"
     else
-      "#{page_title} - LossPerori"
+      "#{page_title} - ロスペロリ"
     end
   end
 end

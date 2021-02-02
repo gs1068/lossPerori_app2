@@ -6,7 +6,11 @@
           <div class="top-catch-area">
             <h1>食品ロスのゼロを目指す。</h1>
             <div class="header-right-nav">
-              <%= link_to "会員登録（無料）", "#", class: "btn btn-first btn-appearance" %>
+              <% if user_signed_in? %>
+                <p>検索欄</p>
+              <% else %>
+                <%= link_to "会員登録", new_user_registration_path, class: "btn btn-first btn-appearance" %>
+              <% end %>
             </div>
           </div>
         </div>

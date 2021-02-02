@@ -10,8 +10,18 @@
       </div>
     </div>
     <div class="header-right-nav">
-      <%= link_to "会員登録（無料）", "#", class: "btn btn-first btn-appearance" %>
-      <%=link_to "ログイン", "#", class: "btn btn-second btn-appearance" %>
+      <% if user_signed_in? %>
+        <ul class="header-nav-menu">
+          <li><%= link_to "", new_room_path %></li>
+          <li><%= link_to "商品一覧", reservations_path %></li>
+          <li><%= link_to "フォローしているユーザーの商品", rooms_path %></li>
+          <li><%= link_to "設定", current_user %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <% else %>
+        <%= link_to "会員登録（無料）", new_user_registration_path, class: "btn btn-first btn-appearance" %>
+        <%=link_to "ログイン", new_user_session_path, class: "btn btn-second btn-appearance" %>
+      <% end %>
     </div>
   </div>
 </nav>
