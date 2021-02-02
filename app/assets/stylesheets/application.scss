@@ -1,0 +1,115 @@
+@import "bootstrap";
+
+// 共通
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 180px;
+  box-sizing: border-box;
+  color: #333333;
+}
+
+body,
+p,
+ol,
+ul,
+td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn-first {
+  color: rgb(191, 0, 0);
+}
+.btn-second {
+  background-color: rgb(191, 0, 0);
+  color: white;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// ヘッダー
+header {
+  border-bottom: 1px solid gray;
+  min-height: 70px;
+  margin: 0 auto;
+  .navbar {
+    min-height: 70px;
+    margin: 0;
+    .header-left-nav {
+      .site_logo {
+        width: 180px;
+        height: 40px;
+      }
+    }
+    .header-right-nav {
+      .btn-appearance {
+        padding: 6px 20px;
+      }
+    }
+  }
+}
+
+// ホームページ
+.top {
+  .top-main {
+    background-image: url("/assets/home-image.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    .top-main-container {
+      height: 100%;
+      .top-catch-fream {
+        height: 600px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        .top-catch-area {
+          width: 50%;
+          padding: 15px 30px;
+          text-align: center;
+          margin: 0 auto;
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 30px;
+          .btn-first {
+            background-color: rgba(185, 185, 185, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+// フッター
+footer {
+  height: 150px;
+  text-align: center;
+  position: relative;
+  .footer_container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    .site_footer_logo {
+      width: 200px;
+      height: 50px;
+    }
+  }
+}
