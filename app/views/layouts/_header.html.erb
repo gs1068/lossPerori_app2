@@ -1,12 +1,18 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "sample app", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
+<header>
+  <nav class="navbar">
+    <div class="header-left-nav">
+      <%= link_to image_tag("1_Primary_logo_on_transparent_280x67.png", alt: "サイトロゴ", class: "site_logo"), root_path%>
+      <div class="header-sharch d-lg-inline-block d-none">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="header-sharch header-sharch-2 d-lg-inline-block d-none">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+    <div class="header-right-nav">
+      <%= link_to "会員登録（無料）", "#", class: "btn btn-first btn-appearance" %>
+      <%=link_to "ログイン", "#", class: "btn btn-second btn-appearance" %>
+    </div>
   </div>
+</nav>
 </header>
