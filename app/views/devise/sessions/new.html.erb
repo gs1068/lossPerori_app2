@@ -3,7 +3,7 @@
     <p class="my-4">ログイン</p>
     <div class="device_inner">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= render "users/shared/error_messages", resource: resource %>
+        <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field form-row">
           <div class="col-2 required-b pt-2"></div>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control col-10 px-2" %>
@@ -24,7 +24,7 @@
           <%= f.submit "ログイン", class:"form-control btn-warning my-4"%>
         </div>
       <% end %>
-      <%= render "users/shared/links" %>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
