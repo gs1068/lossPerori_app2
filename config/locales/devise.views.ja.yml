@@ -35,7 +35,7 @@ ja:
               confirmation: "が内容とあっていません。"
     attributes:
       user:
-        name: "名前"
+        name: "ユーザー名"
         avatar: "アイコン画像"
         email: "メールアドレス"
         password: "パスワード"
@@ -43,7 +43,7 @@ ja:
         password_confirmation: "パスワード確認"
       room:
     models:
-      user: "ユーザ"
+      user: "アカウント"
   devise:
     confirmations:
       new:
