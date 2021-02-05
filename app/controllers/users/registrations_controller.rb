@@ -53,7 +53,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [
-      :name, :email,
+      :username, :email,
       :password, :password_confirmation,
     ])
   end

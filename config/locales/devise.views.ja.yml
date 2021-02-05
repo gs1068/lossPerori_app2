@@ -4,7 +4,7 @@ ja:
       models:
         user:
           attributes:
-            name:
+            username:
               blank: "が入力されていません。"
             email:
               taken: "は既に使用されています。"
@@ -35,7 +35,7 @@ ja:
               confirmation: "が内容とあっていません。"
     attributes:
       user:
-        name: "ユーザー名"
+        username: "ユーザー名"
         avatar: "アイコン画像"
         email: "メールアドレス"
         password: "パスワード"
