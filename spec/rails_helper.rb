@@ -16,6 +16,7 @@ end
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::IntegrationHelpers, type: :request
   config.use_transactional_fixtures = true
   config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless
