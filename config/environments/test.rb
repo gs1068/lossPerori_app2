@@ -61,11 +61,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address:"smtp.gmail.com",
-    domain: 'smtp.gmail.com',
-    port:587,
+    :enable_starttls_auto => true,
+    :address => 'smtp.gmail.com',
+    :port => '587',
+    :domain => 'smtp.gmail.com',
+    :authentication => 'plain',
     user_name: Rails.application.credentials.gmail[:DEV_SMTP_USER_NAME],
     password: Rails.application.credentials.gmail[:DEV_SMTP_PASSWORD],
-    authentication: :login
   }
 end
