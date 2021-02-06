@@ -6,19 +6,19 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field form-row">
           <div class="col-2 required-b pt-2"></div>
-          <%= f.text_field :username, autofocus: true, autocomplete: "username",placeholder: "ユーザー名", class: "form-control col-10 px-2" %>
+          <%= f.text_field :username, autofocus: true, autocomplete: "username",placeholder: "ユーザー名", class: "form-control col-10 px-2", id: "new-username" %>
         </div>
         <div class="field form-row">
           <div class="col-2 required-b pt-2"></div>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control col-10 px-2" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control col-10 px-2", id: "new-email" %>
         </div>
         <div class="field form-row">
           <div class="col-2 required-b pt-2"></div>
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "form-control col-10 px-2" %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "form-control col-10 px-2", id: "new-password" %>
         </div>
         <div class="field form-row">
           <div class="col-2 required-b pt-2"></div>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "form-control col-10 px-2" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "form-control col-10 px-2", id: "new-password-confirmation" %>
         </div>
         <div class="actions">
           <%= f.submit "新しいアカウントを作成", class:"form-control my-4 btn-warning"%>
