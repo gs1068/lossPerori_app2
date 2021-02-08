@@ -214,6 +214,65 @@ header {
 .check_box {
   margin-top: 15px;
 }
+
+// ユーザーページ
+.user {
+  width: 100%;
+  .user-nav {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    .active {
+      border-bottom: 3px solid #bf0000;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+    ul {
+      height: 100%;
+      width: 100%;
+      margin-top: 15px;
+      li {
+        font-size: 14px;
+        padding: 10px;
+        display: inline-block;
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+  }
+  .user-profile-container {
+    width: 100%;
+    margin-left: 20px;
+    .user-view {
+      width: 600px;
+      background-color: #f6f8f9;
+      border-top: 5px solid #bf0000;
+      margin: 30px auto;
+      .user-view-box {
+        max-width: 100%;
+        background-color: #fff;
+        border: 1px solid #eaedef;
+        box-shadow: #13131b26 1px 2px 4px 1px;
+        .update-content {
+          border-bottom: 1px solid #eaedef;
+          padding: 20px;
+          margin: 0 10px;
+          font-size: 16px;
+          .total-kg-container {
+            width: 100%;
+            .total-kg {
+              width: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // _link.html.erb
 .redirect_link {
   font-size: 12px;

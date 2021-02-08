@@ -40,6 +40,11 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         intro: "自己紹介"
+        postcode: "郵便番号"
+        prefecture_code: "都道府県"
+        address_city: "市区町村"
+        address_street: "番地"
+        address_building: "建物名"
         password_confirmation: "パスワード確認"
       room:
     models:
