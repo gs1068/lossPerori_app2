@@ -1,4 +1,4 @@
-RSpec.describe 'StaticPages/UsersLogin', type: :system do
+RSpec.describe 'StaticPages/UsersLogin/UserDestroy', type: :system do
   before do
     ActionMailer::Base.deliveries.clear
   end
@@ -8,7 +8,7 @@ RSpec.describe 'StaticPages/UsersLogin', type: :system do
     body[/http[^"]+/]
   end
 
-  scenario 'rootページ/ログイン一連のテスト' do
+  scenario 'rootページ/ログイン/削除一連のテスト' do
     # 未ログインのroot_page
     visit root_path
     expect(page.title).to eq 'ロスペロリ'
@@ -16,19 +16,17 @@ RSpec.describe 'StaticPages/UsersLogin', type: :system do
     expect(page).to have_link '会員登録', href: new_user_registration_path
     expect(page).to have_link '会員登録（無料）', href: new_user_registration_path
     expect(page).to have_link 'ログイン', href: new_user_session_path
-
     click_link '会員登録（無料）'
     expect(current_path).to eq new_user_registration_path
 
     # 登録失敗
-
     fill_in 'new-username', with: '   '
     fill_in 'new-email', with: 'user@invalid'
     fill_in 'new-password', with: 'hoo'
     fill_in 'new-password-confirmation', with: 'hoo'
     click_button '新しいアカウントを作成'
     expect(current_path).to eq '/users'
-    expect(page).to have_content '新規カウントを作成'
+    expect(page).to have_content '新規アカウントを作成'
     expect(page).to have_content '3 件のエラーが発生したため アカウント は保存されませんでした。'
 
     # 登録成功
@@ -37,7 +35,6 @@ RSpec.describe 'StaticPages/UsersLogin', type: :system do
     fill_in 'new-email', with: 'user@testvalid.com'
     fill_in 'new-password', with: 'foobar'
     fill_in 'new-password-confirmation', with: 'foobar'
-    # click_on '新しいアカウントを作成'
     expect { click_button '新しいアカウントを作成' }.to change { ActionMailer::Base.deliveries.size }.by(1)
     expect(page).to have_content '本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。'
 
@@ -61,6 +58,7 @@ RSpec.describe 'StaticPages/UsersLogin', type: :system do
     expect(page).to have_link 'ログアウト', href: destroy_user_session_path
 
     # ログアウト
+    find(".icon-box").click
     click_link 'ログアウト'
     expect(page).to have_content 'ログアウトしました。'
 
@@ -70,5 +68,11 @@ RSpec.describe 'StaticPages/UsersLogin', type: :system do
     fill_in 'login-password', with: 'foobar'
     click_button 'ログイン'
     expect(page).to have_content 'ログインしました。'
+
+    # 削除
+    # ユーザーページに移動
+    find(".icon-box").click
+    click_link "設定"
+    expect { click_link 'アカウントを削除する' }.to change { User.all.size }.by(-1)
   end
 end

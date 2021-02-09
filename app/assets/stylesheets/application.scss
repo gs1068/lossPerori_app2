@@ -4,7 +4,6 @@
 body {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 180px;
   box-sizing: border-box;
   color: #333333;
 }
@@ -31,6 +30,10 @@ a {
 
 ul {
   list-style: none;
+}
+
+label {
+  display: block;
 }
 
 .btn-first {
@@ -101,6 +104,7 @@ header {
           background-color: #fff;
           padding: 15px;
           z-index: 1000;
+          margin-top: 14px;
           li {
             text-align: center;
             line-height: 30px;
@@ -119,6 +123,22 @@ header {
       }
     }
   }
+}
+
+.label {
+  cursor: pointer;
+}
+
+.nav-item input {
+  display: none;
+}
+
+.nav-item input + ul {
+  display: none;
+}
+
+.nav-item input:checked + ul {
+  display: block;
 }
 
 // ホームページ
@@ -213,7 +233,106 @@ header {
 // ログイン
 .check_box {
   margin-top: 15px;
+  label {
+    display: inline-block;
+  }
 }
+
+// ユーザーページ
+.user {
+  width: 100%;
+  .user-nav {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    .active {
+      border-bottom: 3px solid #bf0000;
+      margin-right: 10px;
+    }
+    ul {
+      height: 100%;
+      width: 100%;
+      margin-top: 15px;
+      li {
+        font-size: 14px;
+        padding: 10px;
+        display: inline-block;
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+  }
+  .user-profile-container {
+    width: 100%;
+    margin-left: 20px;
+    .user-view {
+      width: 600px;
+      background-color: #f6f8f9;
+      border-top: 5px solid #bf0000;
+      margin: 30px auto;
+      .user-view-box {
+        max-width: 100%;
+        background-color: #fff;
+        border: 1px solid #eaedef;
+        box-shadow: #13131b26 1px 2px 4px 1px;
+        .update-content {
+          border-bottom: 1px solid #eaedef;
+          padding: 20px;
+          margin: 0 10px;
+          font-size: 16px;
+          .total-kg-container {
+            width: 100%;
+            .total-kg {
+              width: inherit;
+            }
+          }
+          .show-btn {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .user-view {
+    border-left: 2px solid #e2e2e2;
+    background-color: #fff;
+    .user-view-box {
+      max-width: 880px;
+      background-color: #fff;
+      margin: 0px auto;
+      box-shadow: #13131b26 1px 2px 4px 1px;
+      .update-content {
+        border-bottom: 1px solid #eaedef;
+        padding: 20px;
+        margin: 0 15px;
+        font-size: 16px;
+        .user-intro {
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+// プロフィール画面
+.user-view {
+  background-color: #f6f8f9;
+  border-left: 2px solid #e2e2e2;
+  width: 100%;
+  .icon-box {
+    text-align: center;
+    .host-icon {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50px;
+    }
+  }
+}
+
 // _link.html.erb
 .redirect_link {
   font-size: 12px;
@@ -237,6 +356,10 @@ header {
       text-align: left;
     }
   }
+}
+.error-msg {
+  width: 360px;
+  margin: 20px auto 0px;
 }
 
 // フッター

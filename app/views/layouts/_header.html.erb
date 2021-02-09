@@ -5,9 +5,6 @@
       <div class="header-sharch d-lg-inline-block d-none">
         <i class="fas fa-map-marker-alt"></i>
       </div>
-      <div class="header-sharch header-sharch-2 d-lg-inline-block d-none">
-        <i class="fas fa-search"></i>
-      </div>
     </div>
     <div class="header-right-nav">
       <% if user_signed_in? %>
@@ -15,12 +12,21 @@
           <%= current_user.username %> 様
         </div>
         <div class="nav-item">
+          <label for="toggle" class="label">
+            <div class="icon-box">
+              <% if current_user.avatar.url %>
+                <%= image_tag current_user.avatar.url, class: "icon-image icon-header" %>
+              <% else %>
+                <%= image_tag "/assets/default.png", class: "icon-image icon-header" %>
+              <% end %>
+            </div>
+          </label>
           <input type="checkbox" id="toggle" />
           <ul class="header-nav-menu">
             <li><%= link_to "商品一覧", "" %></li>
             <li><%= link_to "購入履歴", "" %></li>
             <li><%= link_to "お気に入りカテゴリ", "" %></li>
-            <li><%= link_to "設定", "" %></li>
+            <li><%= link_to "設定", current_user %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
