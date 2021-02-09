@@ -16,3 +16,4 @@ AllCops:
     - "public/**/*"
     - "tmp/**/*"
     - "log/**/*"
+    - "app/uploaders/*"
