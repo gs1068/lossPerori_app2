@@ -36,6 +36,11 @@ RSpec.describe User, type: :model do
       expect(user).to be_invalid
     end
 
+    it '自己紹介が192文字以上だと無効にする' do
+      user.intro = 'a' * 192
+      expect(user).to be_invalid
+    end
+
     it 'メールアドレスは有効なフォーマットのみ有効にする' do
       valid_addresses = %w(
         user@example.com USER@foo.COM
