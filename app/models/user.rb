@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :products, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
@@ -9,7 +10,7 @@ class User < ApplicationRecord
   validates :email, length: { maximum: 191 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
-  validates :intro, length: { maximum: 191 }
+  validates :intro, length: { maximum: 400 }
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
