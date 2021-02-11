@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def create
     @product = current_user.products.build(product_params)
     if @product.save
-      flash[:notice] = "商品の出品が完了しました。"
+      flash[:notice] = "ありがとうございます。商品の出品が完了しました。"
       redirect_to root_path
     else
       render 'new'

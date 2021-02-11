@@ -121,6 +121,7 @@ ja:
         fee: "価格"
         expiration_date: "消費期限"
         total_weight: "総重量"
+        avatar: "商品画像"
     models:
       user: "アカウント"
       product: "商品"
