@@ -1,0 +1,75 @@
+<div class="container-fiuld user">
+  <div class="row">
+    <div class="col-lg-2 room-nav room-nav-pc d-lg-block d-none">
+      <ul>
+        <li class="active"><%= link_to "基本情報", current_user %></li>
+      </ul>
+    </div>
+    <div class="col-lg-2 room-nav room-nav-mobile d-lg-none">
+      <ul>
+        <li class="active"><%= link_to "基本情報", current_user %></li>
+      </li>
+    </ul>
+  </div>
+  <div class="col-lg-10 user-view">
+    <div class="user-view-box">
+      <div class="update-content">
+        <div class="row">
+          <h5>ルーム情報登録</h5>
+        </div>
+      </div>
+      <%= form_with model: @product, local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object%>
+        <div class="update-content">
+          <div class="row">
+            <%= f.label :product_name, class: "col-md-3 required-a"%>
+            <%= f.text_field :product_name, class: 'form-control md-4 col-md-9', placeholder:"商品名を入力" %>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= f.label :product_intro, class: "col-md-3 required-a" %>
+            <%= f.text_area :product_intro, class: 'form-control md-4 col-md-9', placeholder:"商品説明を入力" %>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= f.label :raw_material, class: "col-md-3 required-a"%>
+            <%= f.text_area :raw_material, class: 'form-control md-4 col-md-9', placeholder:"原材料を入力" %>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= f.label :fee, class: "col-md-3 required-a"%>
+            <%= f.number_field :fee, class: 'form-control md-4 col-md-9', placeholder:"金額を入力"%>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= f.label :expiration_date, class: "col-md-3 required-a"%>
+            <%= f.date_field :expiration_date, class: 'form-control md-4 col-md-9' %>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= f.label :total_weight, class: "col-md-3 required-a"%>
+            <%= f.number_field :total_weight, class: 'form-control md-4 col-md-9', placeholder:"総重量をkgで入力", step: "0.001" %>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= f.label :avatar, class: "col-md-3 required-a" %>
+            <%= f.file_field :avatar, class:"md-4 col-md-9", placeholder:"ルーム画像をアップロード", id:"user-image" %>
+          </div>
+        </div>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="update-content">
+          <div class="row">
+            <%= f.submit "更新", class: "btn btn-primary mx-3 col-md-2" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

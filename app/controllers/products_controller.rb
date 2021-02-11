@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show, :index, :create]
+  before_action :user_address_nil?, only: [:new, :show, :index, :create]
 
   def index
     @products = current_user.products
+    @product = Product.first
   end
 
   def new
@@ -31,7 +33,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:room).permit(
+    params.require(:product).permit(
       :user_id,
       :product_name,
       :product_intro,
@@ -40,5 +42,9 @@ class ProductsController < ApplicationController
       :expiration_date,
       :total_weight
     )
+  end
+
+  def user_address_nil?
+    address_nil_check
   end
 end

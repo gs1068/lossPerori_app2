@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_084742) do
+ActiveRecord::Schema.define(version: 2021_02_11_062938) do
 
   create_table "products", charset: "utf8mb4", force: :cascade do |t|
     t.string "product_name"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_084742) do
     t.text "raw_material"
     t.integer "fee"
     t.datetime "expiration_date"
-    t.integer "total_weight"
+    t.float "total_weight"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
