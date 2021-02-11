@@ -1,0 +1,44 @@
+class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :show, :index, :create]
+
+  def index
+    @products = current_user.products
+  end
+
+  def new
+    @product = current_user.products.build
+  end
+
+  def create
+    @product = current_user.products.build(product_params)
+    if @product.save
+      flash[:notice] = "商品の出品が完了しました。"
+      redirect_to root_path
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+
+  def product_params
+    params.require(:room).permit(
+      :user_id,
+      :product_name,
+      :product_intro,
+      :raw_material,
+      :fee,
+      :expiration_date,
+      :total_weight
+    )
+  end
+end
