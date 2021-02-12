@@ -28,6 +28,16 @@ RSpec.describe Product, type: :model do
     expect(product).to be_invalid
   end
 
+  it "価格がない場合は商品が無効になる" do
+    product.fee = "   "
+    expect(product).to be_invalid
+  end
+
+  it "価格が数字以外の場合は商品が無効になる" do
+    product.fee = "foobar"
+    expect(product).to be_invalid
+  end
+
   it "レコードがcreated_at順である" do
     users = Product.sorted.first
     expect(users).to eq now

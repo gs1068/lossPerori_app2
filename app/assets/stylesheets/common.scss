@@ -1,0 +1,234 @@
+@import "bootstrap";
+
+// 共通
+body {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  color: #333333;
+  text-align: center;
+}
+
+body,
+p,
+ol,
+ul,
+td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+// 会員登録、ログインボタン
+.btn-first {
+  color: rgb(191, 0, 0);
+}
+.btn-second {
+  background-color: rgb(191, 0, 0);
+  color: white;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// ユーザーナビゲーションバー
+.user-nav {
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  display: flex;
+  .active {
+    border-bottom: 3px solid #bf0000;
+    margin-right: 10px;
+  }
+  ul {
+    height: 100%;
+    width: 100%;
+    margin-top: 15px;
+    li {
+      font-size: 16px;
+      padding: 10px;
+      display: inline-block;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+// flash
+.notice {
+  background-color: #92c24b;
+}
+
+.alert {
+  background-color: #dd2e2e;
+}
+
+.notice,
+.alert {
+  padding: 0;
+  text-align: center;
+  font-size: 8px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+// ヘッダー
+header {
+  border-bottom: 1px solid gray;
+  min-height: 70px;
+  margin: 0 auto;
+  .navbar {
+    min-height: 70px;
+    margin: 0;
+    .header-left-nav {
+      .site_logo {
+        width: 180px;
+        height: 40px;
+      }
+    }
+    .header-right-nav {
+      float: right;
+      .nav-item {
+        display: inline-block;
+        color: #000;
+        font-size: 16px;
+        .icon-header {
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        .header-nav-menu {
+          border: 2px solid #d4d7d8;
+          position: absolute;
+          top: 70px;
+          right: 10px;
+          background-color: #fff;
+          padding: 15px;
+          z-index: 1000;
+          margin-top: 14px;
+          li {
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+            padding: 3px 5px;
+            border-bottom: 1px solid #d4d7d8;
+            a {
+              color: #555657;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .nav-name {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+// headerメニューバー
+.nav-item input {
+  display: none;
+}
+
+.nav-item input + ul {
+  display: none;
+}
+
+.nav-item input:checked + ul {
+  display: block;
+}
+
+// _link.html.erb
+.redirect_link {
+  font-size: 12px;
+}
+
+// deviseエラーメッセージ
+#error_explanation {
+  background-color: #ec0000;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  margin-bottom: 15px;
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  ul {
+    list-style: circle;
+    li {
+      text-align: left;
+    }
+  }
+}
+
+// 自作エラーメッセージ
+.error-msg {
+  width: 360px;
+  margin: 20px auto 0px;
+}
+
+// 必須マーク
+.required-b::before {
+  content: "必須";
+  color: #fff;
+  background-color: #ff0000a8;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: auto 5px;
+}
+
+// 必須マーク（空白用）
+.required-a::before {
+  content: "必須";
+  color: #fff;
+  background-color: #fff;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: auto 5px;
+}
+
+// フッター
+footer {
+  height: 150px;
+  text-align: center;
+  position: relative;
+  .footer_container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    .site_footer_logo {
+      width: 200px;
+      height: 50px;
+    }
+  }
+}

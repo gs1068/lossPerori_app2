@@ -1,3 +1,100 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// ユーザーフォーム,ログイン
+.device {
+  padding-top: 36px;
+  font-size: 16px;
+  .device_frame {
+    max-width: 600px;
+    text-align: center;
+    padding: 24px;
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: #13131b26 1px 2px 4px 1px;
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .device_inner {
+      width: 360px;
+      margin: 0px auto;
+      .field {
+        margin-bottom: 10px;
+        .form-control {
+          display: block;
+          width: 100%;
+          height: calc(1.5em + 0.75rem + 2px);
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+          transition: border-color 0.15s ease-in-out,
+            box-shadow 0.15s ease-in-out;
+        }
+      }
+      .check_box {
+        margin-top: 15px;
+        label {
+          display: inline-block;
+        }
+      }
+      .actions {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+// ユーザーページ、プロフィールページ
+.user {
+  width: 100%;
+  .user-profile-container {
+    width: 100%;
+    .user-view {
+      width: 700px;
+      background-color: #f6f8f9;
+      border-top: 5px solid #bf0000;
+      margin: 30px auto;
+      .user-view-box {
+        max-width: 100%;
+        background-color: #fff;
+        border: 1px solid #eaedef;
+        box-shadow: #13131b26 1px 2px 4px 1px;
+        .update-content {
+          border-bottom: 1px solid #eaedef;
+          padding: 20px;
+          margin: 0 10px;
+          font-size: 16px;
+          .total-kg-container {
+            width: 100%;
+            .total-kg {
+              width: inherit;
+            }
+          }
+          .show-btn {
+            margin: 0;
+          }
+          .icon-box {
+            text-align: center;
+            .host-icon {
+              width: 100px;
+              height: 100px;
+              object-fit: cover;
+              border-radius: 50px;
+            }
+          }
+          .edit-user-label {
+            margin: auto 0;
+          }
+          .user-intro {
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}

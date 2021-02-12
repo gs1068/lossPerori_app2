@@ -1,89 +1,99 @@
-<div class="container-fiuld user">
+<div class="user">
   <div class="row">
     <div class="user-nav">
       <ul>
         <li class=""><%= link_to "アカウント情報", current_user %></li>
         <li class="active"><%= link_to "プロフィール変更", edit_user_path(current_user) %></li>
-        <li class=""><%= link_to "お気に入りカテゴリー", edit_user_path(current_user) %></li>
+        <li class=""><%= link_to "食品を出品する", new_product_path %></li>
+        <li class=""><%= link_to "出品中の商品一覧", edit_user_path(current_user) %></li>
         <li class=""><%= link_to "注文履歴", edit_user_path(current_user) %></li>
       </ul>
     </div>
-    <div class="user-view">
-      <div class="user-view-box">
-        <div class="update-content">
-          <div class="row">
-            <h5>プロフィール</h5>
-          </div>
-        </div>
-        <%= form_with(model: @user, local: true) do |f| %>
-          <%= render 'shared/error_messages', object: f.object%>
+    <div class="user-profile-container">
+      <div class="user-view">
+        <div class="user-view-box">
           <div class="update-content">
             <div class="row">
-              <div class="col-md-6 offset-md-3">
-                <div class="icon-box">
-                  <% if current_user.avatar.url %>
-                    <%= image_tag current_user.avatar.url, class: "icon-image host-icon" %>
-                  <% else %>
-                    <%= image_tag "/assets/default.png", class: "icon-image host-icon" %>
-                  <% end %>
+              <h5>プロフィール</h5>
+            </div>
+          </div>
+          <%= form_with(model: @user, local: true) do |f| %>
+            <%= render 'shared/error_messages', object: f.object%>
+            <div class="update-content">
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+                  <div class="icon-box">
+                    <% if current_user.avatar.url %>
+                      <%= image_tag current_user.avatar.url, class: "icon-image host-icon" %>
+                    <% else %>
+                      <%= image_tag "/assets/default.png", class: "icon-image host-icon" %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :avatar, class: "col-md-3 required-a" %>
-              <%= f.file_field :avatar, class:"md-4 col-md-9", placeholder:"アイコン画像をアップロード", id:"user-image" %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :avatar, class: "col-md-3" %>
+                <%= f.file_field :avatar, class:"md-4 col-md-9", placeholder:"アイコン画像をアップロード", id:"user-image" %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :username, class: "col-md-3 require-a"%>
-              <%= f.text_field :username, class: 'form-control md-4 col-md-9' %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :username, class: "col-md-2 require-a edit-user-label"%>
+                <div class="required-b pt-2"></div>
+                <%= f.text_field :username, class: 'form-control md-4 col-md-9' %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :intro, class: "col-md-3 require-a" %>
-              <%= f.text_area :intro, class: 'form-control md-4 col-md-9 user-intro' %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :intro, class: "col-md-2 require-a edit-user-label" %>
+                <div class="required-a pt-2"></div>
+                <%= f.text_area :intro, class: 'form-control md-4 col-md-9 user-intro' %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :postcode, class: "col-md-3 require-a" %>
-              <%= f.text_field :postcode, autocomplete: 'postcode', class: 'form-control md-4 col-md-9', id: "user_postcode" %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :postcode, class: "col-md-2 require-a edit-user-label" %>
+                <div class="required-b pt-2"></div>
+                <%= f.text_field :postcode, autocomplete: 'postcode', class: 'form-control md-4 col-md-9', id: "user_postcode" %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :prefecture_code, class: "col-md-3 require-a" %>
-              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { prompt: '選択してください' }, class: 'form-control md-4 col-md-9', id: 'user_prefecture_code' %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :prefecture_code, class: "col-md-2 require-a edit-user-label" %>
+                <div class="required-b pt-2"></div>
+                <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { prompt: '選択してください' }, class: 'form-control md-4 col-md-9', id: 'user_prefecture_code' %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :address_city, class: "col-md-3 require-a" %>
-              <%= f.text_field :address_city, autocomplete: 'address_city',class: 'form-control md-4 col-md-9', id: "user_address_city" %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :address_city, class: "col-md-2 require-a edit-user-label" %>
+                <div class="required-b pt-2"></div>
+                <%= f.text_field :address_city, autocomplete: 'address_city',class: 'form-control md-4 col-md-9', id: "user_address_city" %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :address_street, class: "col-md-3 require-a" %>
-              <%= f.text_field :address_street, autocomplete: 'address_street', class: 'form-control md-4 col-md-9', id: "user_address_street" %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :address_street, class: "col-md-2 require-a edit-user-label" %>
+                <div class="required-b pt-2"></div>
+                <%= f.text_field :address_street, autocomplete: 'address_street', class: 'form-control md-4 col-md-9', id: "user_address_street" %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.label :address_building, class: "col-md-3 require-a" %>
-              <%= f.text_field :address_building, autocomplete: 'address_building', class: 'form-control md-4 col-md-9' %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.label :address_building, class: "col-md-2 require-a edit-user-label" %>
+                <div class="required-a pt-2"></div>
+                <%= f.text_field :address_building, autocomplete: 'address_building', class: 'form-control md-4 col-md-9' %>
+              </div>
             </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <%= f.submit "更新", class: "btn-block btn btn-warning show-btn" %>
+            <div class="update-content">
+              <div class="row">
+                <%= f.submit "更新", class: "btn-block btn btn-warning show-btn" %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

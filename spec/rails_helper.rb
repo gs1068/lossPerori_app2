@@ -38,4 +38,7 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+  config.before(:each) do
+    allow(ActiveJob::Base).to receive(:perform_later).and_return(true)
+  end
 end

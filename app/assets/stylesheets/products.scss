@@ -1,3 +1,30 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.product {
+  width: 100%;
+  .product-profile-container {
+    width: 100%;
+    .product-view {
+      width: 700px;
+      background-color: #f6f8f9;
+      border-top: 5px solid #bf0000;
+      margin: 30px auto;
+      .user-view-box {
+        max-width: 100%;
+        background-color: #fff;
+        border: 1px solid #eaedef;
+        box-shadow: #13131b26 1px 2px 4px 1px;
+        .update-content {
+          border-bottom: 1px solid #eaedef;
+          padding: 20px;
+          margin: 0 10px;
+          font-size: 16px;
+          .product-label {
+            margin: auto 0;
+          }
+          .product-btn {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

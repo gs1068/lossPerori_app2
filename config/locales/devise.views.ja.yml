@@ -63,6 +63,44 @@ ja:
               too_short: "は%{count}文字以上に設定して下さい。"
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
+        product:
+          attributes:
+            product_name:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            product_intro:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            raw_material:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            fee:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            expiration_date:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            total_weight:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
     attributes:
       user:
         username: "ユーザー名"
@@ -76,9 +114,17 @@ ja:
         address_street: "番地"
         address_building: "建物名"
         password_confirmation: "パスワード確認"
-      room:
+      product:
+        product_name: "商品名"
+        product_intro: "商品紹介"
+        raw_material: "原材料"
+        fee: "価格"
+        expiration_date: "消費期限"
+        total_weight: "総重量"
+        avatar: "商品画像"
     models:
       user: "アカウント"
+      product: "商品"
   devise:
     confirmations:
       new:
