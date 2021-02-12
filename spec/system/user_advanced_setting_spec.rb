@@ -32,7 +32,7 @@ RSpec.describe 'UsersAdvancedSetting', type: :system do
     click_link "設定"
     expect(page).to have_content 'こんにちはTest-Userさん、'
     expect(page).to have_content 'アカウント'
-    click_link '編集'
+    click_link 'アカウントを編集する'
 
     # アカウント編集ページに移動
     # 無効な編集
@@ -56,7 +56,7 @@ RSpec.describe 'UsersAdvancedSetting', type: :system do
     # 有効な編集（パスワード変更）あり
     find(".icon-box").click
     click_link "設定"
-    click_link '編集'
+    click_link 'アカウントを編集する'
     expect(page).to have_content 'アカウント編集'
     fill_in 'メールアドレス', with: 'user2@testvalid.com'
     fill_in '新しいパスワード', with: 'hogehoge'

@@ -8,7 +8,5 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 require("jquery");
-
-Rails.start();
-Turbolinks.start();
-ActiveStorage.start();
+require("jquery.jpostal.js");
+require("address_autofill.js");

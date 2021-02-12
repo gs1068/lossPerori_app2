@@ -45,6 +45,6 @@ class ProductsController < ApplicationController
   end
 
   def user_address_nil?
-    address_nil_check
+    address_nil_action
   end
 end
