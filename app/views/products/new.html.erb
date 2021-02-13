@@ -4,7 +4,7 @@
       <ul>
         <li class=""><%= link_to "アカウント情報", current_user %></li>
         <li class=""><%= link_to "プロフィール変更", edit_user_path(current_user) %></li>
-        <li class="active"><%= link_to "食品を出品する", edit_user_path(current_user) %></li>
+        <li class="active"><%= link_to "食品を出品する", new_product_path %></li>
         <li class=""><%= link_to "出品中の商品一覧", edit_user_path(current_user) %></li>
         <li class=""><%= link_to "注文履歴", edit_user_path(current_user) %></li>
       </ul>
@@ -63,9 +63,9 @@
             </div>
             <div class="update-content">
               <div class="row">
-                <%= f.label :avatar, class: "col-md-2 product-label" %>
+                <%= f.label :product_avatars, class: "col-md-2 product-label" %>
                 <div class="required-b"></div>
-                <%= f.file_field :avatar, class:"md-4 col-md-9", placeholder:"ルーム画像をアップロード", id:"user-image" %>
+                <%= f.file_field :product_avatars, multiple: true, class:"md-4 col-md-9", id:"user-image" %>
               </div>
             </div>
             <%= f.hidden_field :user_id, value: current_user.id %>

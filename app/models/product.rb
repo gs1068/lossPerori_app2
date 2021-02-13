@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
   scope :sorted, -> { order(created_at: :desc) }
+  mount_uploaders :product_avatars, ProductAvatarUploader
   validates :user_id, presence: true
   validates :product_name, presence: true
   validates :product_intro, presence: true, length: { maximum: 400 }

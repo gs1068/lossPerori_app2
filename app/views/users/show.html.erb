@@ -4,7 +4,7 @@
       <ul>
         <li class="active"><%= link_to "アカウント情報", current_user %></li>
         <li class=""><%= link_to "プロフィール変更", edit_user_path(current_user) %></li>
-        <li class=""><%= link_to "食品を出品する", edit_user_path(current_user) %></li>
+        <li class=""><%= link_to "食品を出品する", new_product_path %></li>
         <li class=""><%= link_to "出品中の商品一覧", edit_user_path(current_user) %></li>
         <li class=""><%= link_to "注文履歴", edit_user_path(current_user) %></li>
       </ul>
@@ -37,8 +37,6 @@
                 <div class="icon-box">
                   <% if current_user.avatar.url %>
                     <%= image_tag current_user.avatar.url, class: "icon-image host-icon" %>
-                  <% else %>
-                    <%= image_tag "/assets/default.png", class: "icon-image host-icon" %>
                   <% end %>
                 </div>
               </div>
