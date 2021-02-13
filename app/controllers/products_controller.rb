@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
       :fee,
       :expiration_date,
       :total_weight,
-      {product_avatars: []}
+      { product_avatars: [] }
     )
   end
 
