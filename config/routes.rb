@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, :only => [:show, :edit, :update]
-  resources :products
+  
+  resources :products do
+    collection do
+      post :confirm
+    end
+  end
 end

@@ -42,4 +42,15 @@ RSpec.describe Product, type: :model do
     users = Product.sorted.first
     expect(users).to eq now
   end
+
+  it "画像は4枚より多い場合は無効になる" do
+    product.product_avatars = [
+      Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test.jpg'), 'spec/system/test.jpg'),
+      Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test2.jpg'), 'spec/system/test2.jpg'),
+      Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test3.jpg'), 'spec/system/test3.jpg'),
+      Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test4.jpg'), 'spec/system/test4.jpg'),
+      Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test5.jpg'), 'spec/system/test5.jpg'),
+    ]
+    expect(product).to be_invalid
+  end
 end

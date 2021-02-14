@@ -11,6 +11,12 @@ class ProductsController < ApplicationController
     @product = current_user.products.build
   end
 
+  def confirm
+    @product = current_user.products.build(product_params)
+    # binding.pry
+    render :new if @procut.invalid?
+  end
+
   def create
     @product = current_user.products.build(product_params)
     if @product.save

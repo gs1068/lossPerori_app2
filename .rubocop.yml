@@ -7,10 +7,10 @@ Rails:
 AllCops:
   TargetRubyVersion: 2.6.6
   Exclude:
-    - '.git/**/*'
-    - 'public/**/*'
-    - 'log/**/*'
-    - 'tmp/**/*'
+    - ".git/**/*"
+    - "public/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
     - "db/**/*"
     - "bin/*"
     - "node_modules/node-sass/src/libsass/**/*"
@@ -21,4 +21,5 @@ AllCops:
     - "spec/*"
     - "node_modules/**/*"
     - "app/uploaders/*"
-    
+    - "spec/factories/*"
+    - "spec/models/product_spec.rb"

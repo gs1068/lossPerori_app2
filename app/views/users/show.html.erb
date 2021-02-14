@@ -1,117 +1,12 @@
 <div class="container user">
   <div class="row">
-    <div class="user-nav">
-      <ul>
-        <li class="active"><%= link_to "アカウント情報", current_user %></li>
-        <li class=""><%= link_to "プロフィール変更", edit_user_path(current_user) %></li>
-        <li class=""><%= link_to "食品を出品する", new_product_path %></li>
-        <li class=""><%= link_to "出品中の商品一覧", edit_user_path(current_user) %></li>
-        <li class=""><%= link_to "注文履歴", edit_user_path(current_user) %></li>
-      </ul>
-    </div>
+    <!-- LIGHT HEADER SECTION -->
+    <%= render 'show_light_header' %>
     <div class="user-profile-container">
-      <div class="user-view">
-        <div class="user-view-box">
-          <div class="update-content">
-            <div class="row">
-              <h5>こんにちは<%= @user.username%>さん、</h5>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="row total-kg-container">
-              <div class="total-kg">食品廃棄を100kg削減達成！🎉</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="user-view">
-        <div class="user-view-box">
-          <div class="update-content">
-            <div class="row">
-              <h5>プロフィール</h5>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <div class="col-md-6 offset-md-3">
-                <div class="icon-box">
-                  <% if current_user.avatar.url %>
-                    <%= image_tag current_user.avatar.url, class: "icon-image host-icon" %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <label class="col-md-3" for="email">ユーザー名</label>
-              <div class="col-md-9"><%= @user.username %></div>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <label class="col-md-3" for="password">自己紹介</label>
-              <% if @user.intro.blank? %>
-                <div class="col-md-9">登録を行ってください。</div>
-              <% else %>
-                <div class="col-md-9"><%= @user.intro %></div>
-              <% end %>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <label class="col-md-3" for="password">住所</label>
-              <% if address_exist? %>
-                <div class="col-md-9">登録を行ってください。</div>
-              <% else %>
-                <div class="col-md-9">
-                  〒<%= @user.postcode %>
-                  <%= @user.prefecture.name%>
-                  <%= @user.address_city%>
-                  <%= @user.address_street%>
-                  <%= @user.address_building%>
-                </div>
-              <% end %>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="">
-              <%= link_to "プロフィールを変更する",  edit_user_path(current_user), class:"btn-block btn btn-warning show-btn" %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="user-view">
-        <div class="user-view-box">
-          <div class="update-content">
-            <div class="row">
-              <h5>アカウント</h5>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <label class="col-md-3" for="email">メールアドレス</label>
-              <div class="col-md-9"><%= @user.email %></div>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="row">
-              <label class="col-md-3" for="password">パスワード</label>
-              <div class="col-md-9">*********</div>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="">
-              <%= link_to "アカウントを編集する",  edit_user_registration_path, class:"btn-block btn btn-warning show-btn" %>
-            </div>
-          </div>
-          <div class="update-content">
-            <div>
-              <%= link_to "アカウントを削除する",  user_registration_path, method: :delete, class:"btn-block btn btn-danger show-btn", data: { confirm: "本当にアカウントを削除しますか?" } %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- USER INFORMATION SECTION -->
+      <%= render 'user_status', user: @user %>
+      <%= render 'user_profile', user: @user%>
+      <%= render 'user_account', user: @user %>
     </div>
   </div>
 </div>

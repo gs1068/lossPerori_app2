@@ -9,13 +9,21 @@ class Product < ApplicationRecord
   validates :fee, presence: true, numericality: { only_integer: true }
   validates :expiration_date, presence: true
   validates :total_weight, presence: true, numericality: { only_float: true }
+  validates :product_avatars, presence: true
   validate  :day_after_today
+  validate  :product_avatars_limit
 
   def day_after_today
     unless expiration_date.nil?
       if expiration_date < Date.today
         errors.add(:expiration_date, 'は本日以降の日付を入力してください')
       end
+    end
+  end
+
+  def product_avatars_limit
+    unless product_avatars.count <= 4
+      errors.add(:product_avatars, 'は4枚枚までです')
     end
   end
 end
