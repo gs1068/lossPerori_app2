@@ -1,4 +1,18 @@
-<%= @product.total_weight.to_f %>
-<% if @product.product_avatars.url %>
-  <%= image_tag @product.product_avatars.url, class: "icon-image icon-header" %>
-<% end %>
+<div class="product">
+  <div class="row">
+    <!-- LIGHT HEADER SECTION -->
+    <%= render 'product_index_light_header' %>
+    <div class="product-profile-container">
+      <div class="product-view">
+        <div class="user-view-box">
+          <div class="update-content">
+            <div class="row">
+              <h5>食品の出品</h5>
+            </div>
+          </div>
+          <%= render 'product_new_form', product: @product %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
