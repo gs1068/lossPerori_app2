@@ -23,7 +23,7 @@ class Product < ApplicationRecord
 
   def product_avatars_limit
     unless product_avatars.count <= 4
-      errors.add(:product_avatars, 'は4枚枚までです')
+      errors.add(:product_avatars, 'は4枚までです')
     end
   end
 end
