@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = current_user.products
-    @product = Product.first
+    @product = Product.last
   end
 
   def new
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     @product = current_user.products.build(product_params)
     if @product.save
       flash[:notice] = "ありがとうございます。商品の出品が完了しました。"
-      redirect_to root_path
+      redirect_to products_path
     else
       render 'new'
     end
@@ -40,11 +40,12 @@ class ProductsController < ApplicationController
       :raw_material,
       :fee,
       :expiration_date,
-      :total_weight
+      :total_weight,
+      { product_avatars: [] }
     )
   end
 
   def user_address_nil?
-    address_nil_check
+    address_nil_action
   end
 end

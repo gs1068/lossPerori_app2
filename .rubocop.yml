@@ -1,9 +1,16 @@
 inherit_from:
   - .rubocop_airbnb.yml
 
+Rails:
+  Enabled: true
+
 AllCops:
   TargetRubyVersion: 2.6.6
   Exclude:
+    - ".git/**/*"
+    - "public/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
     - "db/**/*"
     - "bin/*"
     - "node_modules/node-sass/src/libsass/**/*"
@@ -13,7 +20,6 @@ AllCops:
     - "path/ruby"
     - "spec/*"
     - "node_modules/**/*"
-    - "public/**/*"
-    - "tmp/**/*"
-    - "log/**/*"
     - "app/uploaders/*"
+    - "spec/factories/*"
+    - "spec/models/product_spec.rb"

@@ -7,6 +7,7 @@ FactoryBot.define do
     expiration_date { Time.current.since(3.days) }
     total_weight { 12 }
     created_at { 10.minutes.ago }
+    product_avatars { [Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test.jpg'), 'spec/system/test.jpg')] }
     association :user
 
     trait :yesterday do

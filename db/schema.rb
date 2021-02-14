@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_062938) do
+ActiveRecord::Schema.define(version: 2021_02_12_102934) do
 
   create_table "products", charset: "utf8mb4", force: :cascade do |t|
     t.string "product_name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_062938) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.json "product_avatars"
     t.index ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_products_on_user_id"
   end

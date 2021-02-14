@@ -1,0 +1,31 @@
+<div class="user-view">
+  <div class="user-view-box">
+    <div class="update-content">
+      <div class="row">
+        <h5>アカウント</h5>
+      </div>
+    </div>
+    <div class="update-content">
+      <div class="row">
+        <label class="col-md-3" for="email">メールアドレス</label>
+        <div class="col-md-9"><%= user.email %></div>
+      </div>
+    </div>
+    <div class="update-content">
+      <div class="row">
+        <label class="col-md-3" for="password">パスワード</label>
+        <div class="col-md-9">*********</div>
+      </div>
+    </div>
+    <div class="update-content">
+      <div class="">
+        <%= link_to "アカウントを編集する",  edit_user_registration_path, class:"btn-block btn btn-warning show-btn" %>
+      </div>
+    </div>
+    <div class="update-content">
+      <div>
+        <%= link_to "アカウントを削除する",  user_registration_path, method: :delete, class:"btn-block btn btn-danger show-btn", data: { confirm: "本当にアカウントを削除しますか?" } %>
+      </div>
+    </div>
+  </div>
+</div>
