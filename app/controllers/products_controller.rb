@@ -3,8 +3,7 @@ class ProductsController < ApplicationController
   before_action :user_address_nil?, only: [:new, :show, :index, :create]
 
   def index
-    @products = current_user.products
-    @product = Product.last
+    @products = Product.all
   end
 
   def new

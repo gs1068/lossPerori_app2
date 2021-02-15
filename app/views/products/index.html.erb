@@ -1,18 +1,6 @@
-<div class="product">
+<div class="product_index">
   <div class="row">
     <!-- LIGHT HEADER SECTION -->
     <%= render 'product_index_light_header' %>
-    <div class="product-profile-container">
-      <div class="product-view">
-        <div class="user-view-box">
-          <div class="update-content">
-            <div class="row">
-              <h5>食品の出品</h5>
-            </div>
-          </div>
-          <%= render 'product_new_form', product: @product %>
-        </div>
-      </div>
-    </div>
+    <%= render 'product_content', products: @products %>
   </div>
-</div>
