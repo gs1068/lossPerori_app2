@@ -1,0 +1,13 @@
+<div class="product_index">
+  <div class="row">
+    <!-- LIGHT HEADER SECTION -->
+    <%= render 'product_self_index_light_header' %>
+    <% if @products.count == 0 %>
+      <div class="empty_product">
+        <p>まだ出品がありません。</p>
+      </div>
+    <% else %>
+      <%= render 'self_product_content', products: @products %>
+    <% end %>
+  </div>
+</div>

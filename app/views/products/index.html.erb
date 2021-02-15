@@ -2,5 +2,9 @@
   <div class="row">
     <!-- LIGHT HEADER SECTION -->
     <%= render 'product_index_light_header' %>
-    <%= render 'product_content', products: @products %>
+    <div id="product_lists" class="row">
+      <%= render 'product_content' %>
+    </div>
+    <div class="more"><%= link_to_next_page @products, 'もっと見る', remote: true, id: 'view_more', class: "view_more_btn"%></div>
   </div>
+</div>

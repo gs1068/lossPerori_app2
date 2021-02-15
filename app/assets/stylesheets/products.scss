@@ -33,7 +33,6 @@
 .product_index {
   width: 100%;
   padding: 0 60px 20px;
-  background-color: #f1f1f1;
   .product-frame-inner {
     margin-bottom: 10px;
     a {
@@ -69,6 +68,25 @@
           color: #d01027;
         }
       }
+    }
+  }
+  .empty_product {
+    width: 100%;
+    margin-top: 30px;
+    p {
+      text-align: center;
+      font-size: 22px;
+    }
+  }
+  .more {
+    background-color: #319e8f;
+    font-size: 18px;
+    padding: 12px 40px;
+    border-radius: 20px;
+    margin: 10px auto;
+    a {
+      color: #fff;
+      text-decoration: none;
     }
   }
 }

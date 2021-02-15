@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:show, :edit, :update]
   
-  resources :products
+  resources :products do
+    collection do
+      get :self_index
+    end
+  end
 end
