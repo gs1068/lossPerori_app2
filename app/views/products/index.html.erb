@@ -1,3 +1,4 @@
+<% provide(:title, "商品一覧") %>
 <div class="product_index">
   <div class="row">
     <!-- LIGHT HEADER SECTION -->
@@ -5,6 +6,8 @@
     <div id="product_lists" class="row">
       <%= render 'product_content' %>
     </div>
-    <div class="more"><%= link_to_next_page @products, 'もっと見る', remote: true, id: 'view_more', class: "view_more_btn"%></div>
+    <div class="more">
+      <%= link_to_next_page @products, 'もっと見る', remote: true, id: 'view_more', class: "view_more_btn"%>
+    </div>
   </div>
 </div>

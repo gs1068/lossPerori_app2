@@ -1,7 +1,7 @@
 <div class="user-nav">
   <ul>
     <li class="active"><%= link_to "アカウント情報", current_user %></li>
-    <li class=""><%= link_to "プロフィール変更", edit_user_path(current_user) %></li>
+    <li class=""><%= link_to "プロフィール変更", edit_user_path(current_user), data: {"turbolinks" => false} %></li>
     <li class=""><%= link_to "食品を出品する", new_product_path %></li>
     <li class=""><%= link_to "出品中の商品一覧", self_index_products_path %></li>
     <li class=""><%= link_to "注文履歴", edit_user_path(current_user) %></li>
