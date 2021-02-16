@@ -1,13 +1,17 @@
 RSpec.describe "Users", type: :request do
-  let(:user) { FactoryBot.create(:user) }
+  let(:user) { create(:user, :add_option) }
+  let(:product) { create(:product) }
 
   before do
     user.confirm
     sign_in user
-    get user_path(user.id)
   end
 
   context "showページ" do
+    before do
+      get user_path(user.id)
+    end
+
     it "showページにアクセス出来ていること" do
       expect(response).to have_http_status(:success)
     end
@@ -18,6 +22,10 @@ RSpec.describe "Users", type: :request do
   end
 
   context "editページ" do
+    before do
+      get edit_user_path(user.id)
+    end
+
     it "editページにアクセス出来ていること" do
       expect(response).to have_http_status(:success)
     end
