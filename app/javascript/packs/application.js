@@ -10,3 +10,4 @@ require("channels");
 require("jquery");
 require("jquery.jpostal.js");
 require("address_autofill.js");
+require("application.js");

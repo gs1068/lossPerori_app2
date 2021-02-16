@@ -79,13 +79,11 @@
     }
   }
   .more {
-    background-color: #319e8f;
-    font-size: 18px;
-    padding: 12px 40px;
-    border-radius: 20px;
+    font-size: 16px;
     margin: 10px auto;
     a {
-      color: #fff;
+      color: rgb(105, 105, 105);
+      font-weight: bold;
       text-decoration: none;
     }
   }
@@ -94,7 +92,7 @@
 // 商品ページ
 
 .single_product {
-  margin-top: 100px;
+  margin-top: 60px;
   .media {
     .media-left {
       .carousel {
@@ -168,4 +166,15 @@
       }
     }
   }
+}
+
+// メイン画像のスライドショー
+.slick-next {
+  right: 10px !important;
+  z-index: 100;
+}
+
+.slick-prev {
+  left: 10px !important;
+  z-index: 100;
 }

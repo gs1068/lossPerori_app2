@@ -1,11 +1,11 @@
 <div class="single_product">
   <div class="media row">
     <div class="media-left product_slider col-md-8">
-      <div id="carousel" class="carousel slide" data-ride="carousel">
+      <div id="slider" class="carousel slide" data-ride="carousel">
         <% if product.product_avatars.any? %>
           <% product.product_avatars.each_with_index do |image, i| %>
             <div class="item <%= "active" if i.zero? %>" data-thumb="<%= i %>">
-              <%= image_tag(image.to_s, class: "product-main-image")%>
+              <%= image_tag(image.to_s, class: "product-main-image") %>
             </div>
           <% end %>
         <% end %>
