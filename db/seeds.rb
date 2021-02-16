@@ -21,13 +21,12 @@ end
   expiration_date = Time.current.since(n.days)
   total_weight = n + 1
   user_id = n + 1
-  product_avatars = [Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test.jpg'), 'spec/system/test.jpg')]
+  product_avatars = [Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test3.jpg'), 'spec/system/test3.jpg'), Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test4.jpg'), 'spec/system/test4.jpg')]
   Product.create!(product_name:  product_name,
-              product_intro: product_intro,
-              raw_material:              raw_material,
-              fee:              fee,
-              expiration_date:              expiration_date,
-              total_weight:              total_weight,
-              user_id:              user_id,
+              raw_material: raw_material,
+              fee: fee,
+              expiration_date: expiration_date,
+              total_weight: total_weight,
+              user_id: user_id,
               product_avatars: product_avatars)
 end
