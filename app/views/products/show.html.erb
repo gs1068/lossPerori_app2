@@ -1,0 +1,11 @@
+<% provide(:title, @product.product_name) %>
+<div class="product_index">
+  <div class="row">
+    <!-- LIGHT HEADER SECTION -->
+    <%= render 'product_index_light_header'%>
+    <div class="container">
+      <%= render 'main_product',  product: @product %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

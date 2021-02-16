@@ -50,7 +50,7 @@
     </div>
     <div class="update-content">
       <div class="">
-        <%= link_to "プロフィールを変更する",  edit_user_path(current_user), class:"btn-block btn btn-warning show-btn" %>
+        <%= link_to "プロフィールを変更する",  edit_user_path(current_user), class:"btn-block btn btn-warning show-btn", data: {"turbolinks" => false} %>
       </div>
     </div>
   </div>

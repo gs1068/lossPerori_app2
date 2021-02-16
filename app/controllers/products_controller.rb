@@ -3,8 +3,15 @@ class ProductsController < ApplicationController
   before_action :user_address_nil?, only: [:new, :show, :index, :create]
 
   def index
+    @products = Product.order(created_at: :desc).page(params[:page]).per(12)
+  end
+
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  def self_index
     @products = current_user.products
-    @product = Product.last
   end
 
   def new

@@ -34,6 +34,11 @@ label {
   cursor: pointer;
 }
 
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
 // 会員登録、ログインボタン
 .btn-first {
   color: rgb(191, 0, 0);
@@ -97,7 +102,8 @@ label {
 
 // ヘッダー
 header {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 10px #ddd;
   min-height: 70px;
   margin: 0 auto;
   .navbar {

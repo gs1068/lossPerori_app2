@@ -28,3 +28,153 @@
     }
   }
 }
+
+// 一覧ページ
+.product_index {
+  width: 100%;
+  padding: 0 60px 20px;
+  .product-frame-inner {
+    margin-bottom: 10px;
+    a {
+      color: #000;
+      .product-image-out {
+        width: 100%;
+        background: #f6f8f9;
+        height: 200px;
+        .product-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .product-profile {
+        width: 100%;
+        padding: 15px;
+        p {
+          word-break: break-all;
+        }
+        .product-profile-name {
+          font-size: 14px;
+        }
+        .product-user-name {
+          font-size: 14px;
+          text-align: right;
+        }
+        .product-profile-price {
+          text-align: right;
+          font-size: 22px;
+          font-weight: bold;
+          letter-spacing: 1px;
+          color: #d01027;
+        }
+      }
+    }
+  }
+  .empty_product {
+    width: 100%;
+    margin-top: 30px;
+    p {
+      text-align: center;
+      font-size: 22px;
+    }
+  }
+  .more {
+    font-size: 16px;
+    margin: 10px auto;
+    a {
+      color: rgb(105, 105, 105);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+// 商品ページ
+
+.single_product {
+  margin-top: 60px;
+  .media {
+    .media-left {
+      .carousel {
+        margin-bottom: 20px;
+        width: 100%;
+        .product-main-image {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .all_image {
+        .carousel {
+          position: relative;
+          .carousel-inner {
+            position: relative;
+            width: 100%;
+            height: 160px;
+            margin: 0 auto;
+            display: flex;
+            .thumb {
+              height: 140px;
+              width: 160px;
+              &:not(:first-child) {
+                margin-left: 15px;
+              }
+              .product-sub-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .media-body {
+    text-align: left;
+    .list-inline {
+      li {
+        font-size: 12px;
+        color: #b4b4b4;
+        padding-left: 5px;
+        .fa-reply {
+          padding-right: 10px;
+        }
+      }
+    }
+    h2 {
+      font-size: 30px;
+    }
+    .fee {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    p {
+      font-size: 14px;
+    }
+    .product_intro_title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .btn-area {
+      margin-top: 50px;
+      .fa-angle-right {
+        padding-left: 10px;
+      }
+      .fa-angle-left {
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+// メイン画像のスライドショー
+.slick-next {
+  right: 10px !important;
+  z-index: 100;
+}
+
+.slick-prev {
+  left: 10px !important;
+  z-index: 100;
+}

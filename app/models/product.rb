@@ -12,6 +12,7 @@ class Product < ApplicationRecord
   validates :product_avatars, presence: true
   validate  :day_after_today
   validate  :product_avatars_limit
+  paginates_per 8
 
   def day_after_today
     unless expiration_date.nil?

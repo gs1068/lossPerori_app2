@@ -17,7 +17,10 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    新着情報
+  <div class="new_information">
+    <p>新着情報</p>
+    <div class="row">
+      <%= render 'home_product_content', products: @products %>
+    </div>
   </div>
 </div>

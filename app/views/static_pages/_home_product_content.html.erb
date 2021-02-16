@@ -1,0 +1,16 @@
+<% products.each do |product| %>
+  <div class="col-sm-6 col-lg-4 col-xl-3">
+    <div class="product-frame-inner">
+      <%= link_to product_path(product.id), data: {"turbolinks" => false} do%>
+        <div class="product-image-out">
+          <%= image_tag product.product_avatars.first.to_s, class: "product-image", alt: "商品画像" %>
+        </div>
+        <div class="product-profile">
+          <p class="product-profile-name"><%= product.product_name %></p>
+          <p class="product-user-name">出品者:<%= product.user.username %></p>
+          <p class="product-profile-price">¥<%= product.fee.to_s(:delimited) %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
