@@ -1,0 +1,59 @@
+<div class="single_product">
+  <div class="media row">
+    <div class="media-left product_slider col-md-8">
+      <div id="carousel" class="carousel slide" data-ride="carousel">
+        <% if product.product_avatars.any? %>
+          <% product.product_avatars.each_with_index do |image, i| %>
+            <div class="item <%= "active" if i.zero? %>" data-thumb="<%= i %>">
+              <%= image_tag(image.to_s, class: "product-main-image")%>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="clearfix all_image">
+        <div id="thumbcarousel" class="carousel slide" data-interval="false">
+          <div class="carousel-inner">
+            <div class="carousel-inner">
+              <% if product.product_avatars.any? %>
+                <% product.product_avatars.each_with_index do |image, i| %>
+                  <div class="thumb" data-slide-to="<%= i %>" data-target="#carousel">
+                    <%= image_tag(image.to_s, class: "product-sub-image") %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+            <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="media-body col-md-4">
+      <ul class="list-inline">
+        <%= link_to products_path do %>
+          <li><i class="fa fa-reply" aria-hidden="true"></i>一覧ページへ戻る</li>
+        <% end %>
+      </ul>
+      <h2><%= product.product_name %></h2>
+      <h3 class="fee">¥<%= product.fee.to_s(:delimited) %></h3>
+      <p class="raw_material">出品者 : <%= product.user.username %></p>
+      <p class="raw_material">原材料 : <%= product.raw_material %></p>
+      <p class="total_weight">削減できる重量 : <%= product.total_weight %>kg</p>
+      <p class="expiration_date">消費期限 : <%= product.expiration_date.strftime('%Y年%m月%d日')%></p>
+      <p class="product_intro_title">この商品について</p>
+      <p class="product_intro"><%= product.product_intro %></p>
+      <div class="btn-area">
+        <a href="#" class="btn btn-warning btn-block">購入へ進む<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      </div>
+      <% if current_user == product.user %>
+        <div class="btn-area">
+          <a href="#" class="btn btn-secondary btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i>編集</a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
