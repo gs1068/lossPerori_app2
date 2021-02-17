@@ -10,7 +10,7 @@ RSpec.describe "Products", type: :request do
     sign_in user
   end
 
-  context "showページ" do
+  context "商品詳細ページ" do
     before do
       get product_path(product.id)
     end
