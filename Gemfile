@@ -20,6 +20,8 @@ gem 'jquery-rails'
 gem 'jp_prefecture'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
