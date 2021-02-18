@@ -14,6 +14,8 @@ class Product < ApplicationRecord
   validate  :product_avatars_limit
   paginates_per 8
 
+  private
+
   def day_after_today
     unless expiration_date.nil?
       if expiration_date < Date.today

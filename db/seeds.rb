@@ -23,6 +23,7 @@ end
   user_id = n + 1
   product_avatars = [Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test3.jpg'), 'spec/system/test3.jpg'), Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test4.jpg'), 'spec/system/test4.jpg')]
   Product.create!(product_name:  product_name,
+              product_intro: product_intro,
               raw_material: raw_material,
               fee: fee,
               expiration_date: expiration_date,
