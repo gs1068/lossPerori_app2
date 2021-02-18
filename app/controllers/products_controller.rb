@@ -1,9 +1,15 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :show, :index, :create, :edit, :destroy, :update]
-  before_action :user_address_nil?, only: [:new, :show, :index, :create, :edit, :destroy, :update]
+  before_action :authenticate_user!,
+                only: [:new, :show, :index, :create, :edit, :destroy, :update, :search]
+  before_action :user_address_nil?,
+                only: [:new, :show, :index, :create, :edit, :destroy, :update, :search]
 
   def index
     @products = Product.order(created_at: :desc).page(params[:page]).per(12)
+  end
+
+  def search
+    @products = Product.search_free_word(params[:free_word]).page(params[:page]).per(12)
   end
 
   def show
@@ -11,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def self_index
-    @products = current_user.products
+    @products = current_user.products.order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def new

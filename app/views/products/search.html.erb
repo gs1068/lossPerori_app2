@@ -1,11 +1,11 @@
-<% provide(:title, "出品した商品一覧") %>
+<% provide(:title, "検索結果一覧") %>
 <div class="product_index">
   <div class="row">
     <!-- LIGHT HEADER SECTION -->
-    <%= render 'product_self_index_light_header' %>
+    <%= render 'product_index_light_header' %>
     <% if @products.count == 0 %>
       <div class="empty_product">
-        <p>まだ出品がありません。</p>
+        <p>検索結果:0</p>
       </div>
     <% else %>
       <div id="product_lists" class="row">

@@ -2,10 +2,18 @@
   <nav class="navbar">
     <div class="header-left-nav">
       <%= link_to image_tag("1_Primary_logo_on_transparent_280x67.png", alt: "サイトロゴ", class: "site_logo"), root_path, class: "site_logo_link"%>
-      <div class="header-sharch d-lg-inline-block d-none">
-        <i class="fas fa-map-marker-alt"></i>
-      </div>
     </div>
+    <% if user_signed_in? %>
+      <div class="header-center-nav">
+        <div class="header-sharch d-lg-inline-block d-none">
+          <%= form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |f| %>
+            <%= f.text_field :free_word, placeholder: "キーワード検索", class: "form-control" %>
+            <%= f.submit '探す', class: "search-btn" %>
+          <% end %>
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+      </div>
+    <% end %>
     <div class="header-right-nav">
       <% if user_signed_in? %>
         <div class="nav-item nav-name d-sm-inline-block d-none">

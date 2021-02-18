@@ -12,7 +12,18 @@ class Product < ApplicationRecord
   validates :product_avatars, presence: true
   validate  :day_after_today
   validate  :product_avatars_limit
-  paginates_per 8
+
+  def self.search_free_word(search_free_waord)
+    return Product.all unless search_free_waord
+    Product.where([
+      'product_name LIKE(?) OR
+      product_intro LIKE(?) OR
+      raw_material LIKE(?)',
+      "%#{search_free_waord}%",
+      "%#{search_free_waord}%",
+      "%#{search_free_waord}%",
+    ])
+  end
 
   private
 
