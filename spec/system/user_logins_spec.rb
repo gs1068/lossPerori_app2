@@ -30,13 +30,7 @@ RSpec.describe 'StaticPages/UsersLogin/UserDestroy', type: :system do
     expect(page).to have_content '3 件のエラーが発生したため アカウント は保存されませんでした。'
 
     # 登録成功
-    visit new_user_registration_path
-    fill_in 'new-username', with: 'Test-User'
-    fill_in 'new-email', with: 'user@testvalid.com'
-    fill_in 'new-password', with: 'foobar'
-    fill_in 'new-password-confirmation', with: 'foobar'
-    expect { click_button '新しいアカウントを作成' }.to change { ActionMailer::Base.deliveries.size }.by(1)
-    expect(page).to have_content '本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。'
+    register
 
     mail = ActionMailer::Base.deliveries.last
     url = extract_confirmation_url(mail)
@@ -51,6 +45,7 @@ RSpec.describe 'StaticPages/UsersLogin/UserDestroy', type: :system do
     fill_in 'login-email', with: 'user@testvalid.com'
     fill_in 'login-password', with: 'foobar'
     click_button 'ログイン'
+    expect(page).to have_content 'ログインしました。'
 
     # ログイン後のroot_page
     expect(page).to have_content 'ログインしました。'
@@ -58,16 +53,10 @@ RSpec.describe 'StaticPages/UsersLogin/UserDestroy', type: :system do
     expect(page).to have_link 'ログアウト', href: destroy_user_session_path
 
     # ログアウト
-    find(".icon-box").click
-    click_link 'ログアウト'
-    expect(page).to have_content 'ログアウトしました。'
+    logout
 
     # 再ログイン
-    click_link 'ログイン'
-    fill_in 'login-email', with: 'user@testvalid.com'
-    fill_in 'login-password', with: 'foobar'
-    click_button 'ログイン'
-    expect(page).to have_content 'ログインしました。'
+    login
 
     # 削除
     # ユーザーページに移動

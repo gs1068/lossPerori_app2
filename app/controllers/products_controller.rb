@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :show, :index, :create]
-  before_action :user_address_nil?, only: [:new, :show, :index, :create]
+  before_action :authenticate_user!, only: [:new, :show, :index, :create, :edit, :destroy, :update]
+  before_action :user_address_nil?, only: [:new, :show, :index, :create, :edit, :destroy, :update]
 
   def index
     @products = Product.order(created_at: :desc).page(params[:page]).per(12)
@@ -29,12 +29,23 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      flash[:notice] = "商品の編集が完了しました。"
+      redirect_to products_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    Product.find(params[:id]).destroy
+    flash[:notice] = "商品の削除が完了しました。"
+    redirect_to products_path
   end
 
   private

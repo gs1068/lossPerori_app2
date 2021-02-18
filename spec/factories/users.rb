@@ -5,5 +5,13 @@ FactoryBot.define do
     password { "password" }
     password_confirmation { "password" }
     intro { "foobar" }
+    
+    trait :add_option do
+      postcode { 1234567 }
+      prefecture_code { 01 }
+      address_city { "テスト区" }
+      address_street { "テスト1-2-34" }
+      address_building { "テスト住宅22-2" }
+    end
   end
 end

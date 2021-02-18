@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object%>
   <div class="update-content">
     <div class="row">
-      <%= f.label :product_avatars,"商品画像（最大4枚まで）",class: "col-md-4 product-label" %>
+      <%= f.label :product_avatars,"商品画像（最大4枚まで）",class: "col-md-4 product-label product_avatar" %>
       <div class="required-b"></div>
       <%= f.file_field :product_avatars, multiple: true, class:"md-4 col-md-7", id:"user-image" %>
     </div>

@@ -51,7 +51,7 @@
       </div>
       <% if current_user == product.user %>
         <div class="btn-area">
-          <a href="#" class="btn btn-secondary btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i>編集</a>
+          <%= link_to "編集する", edit_product_path(product.id), class: "btn btn-secondary btn-block" %>
         </div>
       <% end %>
     </div>

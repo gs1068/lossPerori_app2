@@ -1,0 +1,19 @@
+<% provide(:title, "出品する") %>
+<div class="product">
+  <div class="row">
+    <!-- LIGHT HEADER SECTION -->
+    <%= render 'product_new_light_header' %>
+    <div class="product-profile-container">
+      <div class="product-view">
+        <div class="user-view-box">
+          <div class="update-content">
+            <div class="row">
+              <h5>商品の編集</h5>
+            </div>
+          </div>
+          <%= render 'product_edit_form', product: @product %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

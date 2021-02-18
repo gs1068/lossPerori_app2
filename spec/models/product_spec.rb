@@ -4,7 +4,7 @@ RSpec.describe Product, type: :model do
   let!(:now) { create(:product, :now) }
   let!(:yesterday) { create(:product, :yesterday) }
 
-  it "商品が有効である" do
+  it "商品が有効である" do  
     expect(product).to be_valid
   end
 
