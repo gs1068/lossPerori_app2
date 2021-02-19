@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   validates :product_intro, presence: true, length: { maximum: 400 }
   validates :raw_material, presence: true
   validates :fee, presence: true, numericality: { only_integer: true }
+  validates :categories, presence: true
   validates :expiration_date, presence: true
   validates :total_weight, presence: true, numericality: { only_float: true }
   validates :product_avatars, presence: true
@@ -18,7 +19,9 @@ class Product < ApplicationRecord
     Product.where([
       'product_name LIKE(?) OR
       product_intro LIKE(?) OR
+      categories LIKE(?) OR
       raw_material LIKE(?)',
+      "%#{search_free_waord}%",
       "%#{search_free_waord}%",
       "%#{search_free_waord}%",
       "%#{search_free_waord}%",
