@@ -28,6 +28,16 @@ RSpec.describe Product, type: :model do
     expect(product).to be_invalid
   end
 
+  it "原材料がない場合は商品が無効になる" do
+    product.raw_material = "   "
+    expect(product).to be_invalid
+  end
+
+  it "カテゴリーがない場合は商品が無効になる" do
+    product.categories = "　　　　"
+    expect(product).to be_invalid
+  end
+
   it "価格がない場合は商品が無効になる" do
     product.fee = "   "
     expect(product).to be_invalid
