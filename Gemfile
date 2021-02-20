@@ -21,7 +21,7 @@ gem 'jp_prefecture'
 gem 'carrierwave'
 gem 'kaminari'
 gem 'fog-aws'
-gem 'rails_admin'
+gem 'rails_admin', '~> 2.0.0.beta'
 gem 'cancancan'
 
 group :development, :test do
