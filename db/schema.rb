@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_014107) do
+ActiveRecord::Schema.define(version: 2021_02_20_065931) do
 
   create_table "products", charset: "utf8mb4", force: :cascade do |t|
     t.string "product_name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_014107) do
     t.string "address_street"
     t.string "address_building"
     t.string "avatar"
+    t.boolean "admin", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
