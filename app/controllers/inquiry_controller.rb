@@ -1,7 +1,7 @@
 class InquiryController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :confirm, :thanks]
   def index
     @inquiry = Inquiry.new
-    render :action => 'index'
   end
 
   def confirm
@@ -14,8 +14,13 @@ class InquiryController < ApplicationController
   end
 
   def thanks
-    @inquiry = Inquiry.new(params[:inquiry].permit(:name, :email, :message))
+    @inquiry = Inquiry.new(inquiry_params)
     InquiryMailer.received_email(@inquiry).deliver
+    InquiryMailer.host_received_email(@inquiry).deliver
     render :action => 'thanks'
+  end
+
+  def inquiry_params
+    params.require(:inquiry).permit(:name, :email, :message)
   end
 end

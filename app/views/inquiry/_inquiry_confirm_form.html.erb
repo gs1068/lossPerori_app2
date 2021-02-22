@@ -1,0 +1,28 @@
+<%= form_for inquiry, :url => inquiry_thanks_path do |f| %>
+  <div class="update-content">
+    <div class="row">
+      <label for="name" class="col-md-4 inquiry-label">名前</label>
+      <%= f.hidden_field :name %>
+      <%= inquiry.name%>
+    </div>
+  </div>
+  <div class="update-content">
+    <div class="row">
+      <label for="email" class="col-md-4 inquiry-label">Email</label>
+      <%= f.hidden_field :email %>
+      <%= inquiry.email%>
+    </div>
+  </div>
+  <div class="update-content">
+    <div class="row">
+      <label for="message" class="col-md-4 inquiry-label">お問い合わせ内容</label>
+      <%= f.hidden_field :message %>
+      <%= inquiry.message%>
+    </div>
+  </div>
+  <div class="update-content">
+    <div class="row">
+      <%= f.submit '送信する', class: "btn-block btn btn-warning inquiry-btn" %>
+    </div>
+  </div>
+<% end %>
