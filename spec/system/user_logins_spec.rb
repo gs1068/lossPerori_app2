@@ -25,7 +25,7 @@ RSpec.describe 'StaticPages/UsersLogin/UserDestroy', type: :system do
     fill_in 'new-password', with: 'hoo'
     fill_in 'new-password-confirmation', with: 'hoo'
     click_button '新しいアカウントを作成'
-    expect(current_path).to eq '/users'
+    expect(current_path).to eq '/lossperori/users'
     expect(page).to have_content '新規アカウントを作成'
     expect(page).to have_content '3 件のエラーが発生したため アカウント は保存されませんでした。'
 
