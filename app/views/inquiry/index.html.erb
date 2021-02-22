@@ -1,0 +1,17 @@
+<% provide(:title, "お問い合わせ") %>
+<div class="inquiry">
+  <div class="row">
+    <div class="inquiry-profile-container">
+      <div class="inquiry-view">
+        <div class="inquiry-view-box">
+          <div class="update-content">
+            <div class="row">
+              <h5>お問い合わせ</h5>
+            </div>
+          </div>
+          <%= render 'inquiry_new_form', inquiry: @inquiry %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
