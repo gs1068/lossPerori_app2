@@ -1,32 +1,34 @@
 class PurchasesController < ApplicationController
-  def index
-    @purchases = Purchase.where(user_id: current_user.id)
-  end
+  before_action :authenticate_user!,
+                only: [:index, :confirm, :create, :thanks]
 
-  def new
-    @purchase = current_user.purchases.build
+  def index
+    @purchases = Purchase.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def confirm
     @purchase = current_user.purchases.build(purchase_params)
+    @product = @purchase.product
+    @user = @purchase.user
     render "/lossperori/static_pages/home" if @purchase.invalid?
   end
 
   def create
     @purchase = current_user.purchases.build(purchase_params)
-    # @room = @reservation[:reserving_id]
-    if @reservation.save
-      flash[:notice] = "商品を購入しました"
-      redirect_to purchases_path
+    if @purchase.save
+      redirect_to thanks_purchases_path
     else
       flash.now[:alert] = "商品の購入に失敗しました"
       render "/lossperori/static_pages/home"
     end
   end
 
+  def thanks
+  end
+
   private
 
   def purchase_params
-    params.permit(:user_id, :product_id)
+    params.require(:purchase).permit(:user_id, :product_id)
   end
 end

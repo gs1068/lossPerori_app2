@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   
     root 'static_pages#home'
 
+    get   'inquiry'         => 'inquiry#index'
+    post  'inquiry/confirm' => 'inquiry#confirm'
+    post  'inquiry/thanks'  => 'inquiry#thanks' 
+
     devise_for :users, :controllers => {
       :registrations => 'users/registrations',
       :sessions => 'users/sessions'   
@@ -23,13 +27,10 @@ Rails.application.routes.draw do
       end
     end
 
-    get   'inquiry'         => 'inquiry#index'
-    post  'inquiry/confirm' => 'inquiry#confirm'
-    post  'inquiry/thanks'  => 'inquiry#thanks' 
-
     resources :purchases do
       collection do
         post :confirm
+        get :thanks
       end
     end
   end

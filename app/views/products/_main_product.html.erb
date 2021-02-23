@@ -46,10 +46,15 @@
       <p class="expiration_date">消費期限 : <%= product.expiration_date.strftime('%Y年%m月%d日')%></p>
       <p class="product_intro_title">この商品について</p>
       <p class="product_intro"><%= product.product_intro %></p>
-      <div class="btn-area">
-        <a href="#" class="btn btn-warning btn-block">購入へ進む<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-      </div>
-      <% if current_user == product.user %>
+      <% if current_user != product.user %>
+        <div class="btn-area">
+          <%= form_with model: purchase, method: :post, url: confirm_purchases_path, local: true do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.submit "購入へ進む", class: "btn btn-warning btn-block"%>
+          <% end %>
+        </div>
+      <% else %>
         <div class="btn-area">
           <%= link_to "編集する", edit_product_path(product.id), class: "btn btn-secondary btn-block" %>
         </div>

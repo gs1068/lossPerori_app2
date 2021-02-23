@@ -1,3 +1,107 @@
-// Place all the styles related to the purchases controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// confirmページ
+.purchase {
+  width: 100%;
+  .purchase-profile-container {
+    width: 100%;
+    .purchase-view {
+      width: 700px;
+      background-color: #f6f8f9;
+      border-top: 5px solid #bf0000;
+      margin: 30px auto;
+      .purchase-view-box {
+        max-width: 100%;
+        background-color: #fff;
+        border: 1px solid #eaedef;
+        box-shadow: #13131b26 1px 2px 4px 1px;
+        .update-content {
+          border-bottom: 1px solid #eaedef;
+          padding: 20px;
+          margin: 0 10px;
+          font-size: 16px;
+          .purhcase-label {
+            margin: auto 0;
+            font-size: 22px;
+          }
+          .purchase_text {
+            height: 200px;
+          }
+          .purchase-btn {
+            margin: 0;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// thanksページ
+.thanks_content {
+  margin-top: 30px;
+  .thanks_text {
+    padding-top: 30px;
+    font-size: 18px;
+  }
+}
+
+// 注文履歴ページ
+.purchase_index_container {
+  width: 100%;
+  padding: 30px 60px;
+  table {
+    width: 100%;
+    tr {
+      border-top: 1px solid #eaedef;
+      border-bottom: 1px solid #eaedef;
+      th {
+        padding: 8px 15px;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: #f9fafb;
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid #eaedef;
+        td {
+          padding: 10px;
+          a {
+            color: #4a90e2;
+            text-decoration: underline;
+          }
+          .room-posts-image {
+            width: 240px;
+            height: 140px;
+            object-fit: cover;
+          }
+        }
+        .posts-name {
+          font-size: 18px;
+          font-weight: bold;
+          color: #909090;
+        }
+        .posts-content {
+          max-width: 400px;
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .more {
+    font-size: 16px;
+    margin: 10px auto;
+    a {
+      color: rgb(105, 105, 105);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

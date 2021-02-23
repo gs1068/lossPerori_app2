@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @purchase = current_user.purchases.build
   end
 
   def self_index

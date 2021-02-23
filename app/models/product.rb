@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many :purchases
   scope :sorted, -> { order(created_at: :desc) }
   mount_uploaders :product_avatars, ProductAvatarUploader
   validates :user_id, presence: true
