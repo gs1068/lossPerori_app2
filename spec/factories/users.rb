@@ -13,5 +13,12 @@ FactoryBot.define do
       address_street { "テスト1-2-34" }
       address_building { "テスト住宅22-2" }
     end
+
+    trait :other_user do
+      username { "OtherTestUser" }
+      password { "password" }
+      password_confirmation { "password" }
+      intro { "otheruser" }
+    end
   end
 end

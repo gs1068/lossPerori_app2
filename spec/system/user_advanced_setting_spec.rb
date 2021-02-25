@@ -18,7 +18,7 @@ RSpec.describe 'UsersAdvancedSetting', type: :system do
     # ユーザーページに移動
     find(".icon-box").click
     click_link "設定"
-    expect(page).to have_content 'こんにちはTest-Userさん、'
+    expect(page).to have_content 'こんにちはTest_Userさん、'
     expect(page).to have_content 'アカウント'
     click_link 'アカウントを編集する'
 

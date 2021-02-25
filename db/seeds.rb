@@ -6,7 +6,7 @@ User.create!(username:  "Genta Saito",
 User.create!(username:  "管理ユーザー",
             email: "lossperori@gmail.com",
             password:              "foobar",
-            password_confirmation: "foobar"
+            password_confirmation: "foobar",
             admin: "true")
 
 45.times do |n|

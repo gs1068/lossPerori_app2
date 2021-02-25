@@ -18,7 +18,7 @@ RSpec.describe 'ProductsSetting', type: :system do
     # ユーザーページに移動
     find(".icon-box").click
     click_link "設定"
-    expect(page).to have_content 'こんにちはTest-Userさん、'
+    expect(page).to have_content 'こんにちはTest_Userさん、'
     expect(page).to have_content 'アカウント'
     click_link 'アカウントを編集する'
 
@@ -40,17 +40,7 @@ RSpec.describe 'ProductsSetting', type: :system do
     expect(page).to have_content 'エラーが10個あります。'
 
     # 有効な商品の出品
-    click_link '食品を出品する'
-    attach_file 'product[product_avatars][]', 'spec/system/test2.jpg'
-    fill_in '商品名', with: 'Test-Product'
-    fill_in '商品紹介', with: 'hogehogefoobar'
-    fill_in '原材料', with: 'foobar'
-    select '野菜or果物', from: 'カテゴリー'
-    fill_in '価格', with: '1234'
-    fill_in '消費期限', with: '002023-12-31'
-    fill_in '総重量', with: '1.5'
-    click_button '出品する'
-    expect(page).to have_content 'ありがとうございます。商品の出品が完了しました。'
+    listing
 
     # 商品の編集
     user = User.first

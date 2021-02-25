@@ -1,8 +1,9 @@
 RSpec.describe Product, type: :model do
-  let(:product) { create(:product) }
-  let!(:day_before_yesterday) { create(:product, :day_before_yesterday) }
-  let!(:now) { create(:product, :now) }
-  let!(:yesterday) { create(:product, :yesterday) }
+  let(:user) { create(:user, :add_option) }
+  let(:product) { create(:product, user: user) }
+  let!(:day_before_yesterday) { create(:product, :day_before_yesterday, user: user) }
+  let!(:now) { create(:product, :now, user: user) }
+  let!(:yesterday) { create(:product, :yesterday, user: user) }
 
   it "商品が有効である" do  
     expect(product).to be_valid

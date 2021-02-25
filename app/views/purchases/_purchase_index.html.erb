@@ -1,0 +1,14 @@
+<% @purchases.each do |purchase| %>
+  <tr>
+    <td>
+      <%= link_to product_path(purchase.product.id), data: {"turbolinks" => false} do%>
+        <%= image_tag(purchase.product.product_avatars.first.to_s, class: "room-posts-image") %>
+      <% end %>
+    </td>
+    <td class="posts-content"><%= purchase.product.product_name %></td>
+    <td class="posts-content"><%= purchase.product.product_intro %></td>
+    <td class="price-icon">¥ <%= purchase.product.fee.to_s(:delimited) %></td>
+    <td><%= purchase.product.total_weight %></td>
+    <td><%= purchase.product.created_at.strftime('%Y年%m月%d日') %></td>
+  </tr>
+<% end %>

@@ -12,4 +12,12 @@ module ProductsHelper
     current_user.address_city.nil? ||
     current_user.address_street.nil?
   end
+
+  def purchase_total_weight(user)
+    array = []
+    Purchase.where(user_id: user.id).each do |purchase|
+      array << purchase.product.total_weight
+    end
+    array.sum
+  end
 end

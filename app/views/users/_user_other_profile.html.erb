@@ -1,0 +1,36 @@
+<div class="user-view">
+  <div class="user-view-box">
+    <div class="update-content">
+      <div class="row">
+        <h5>プロフィール</h5>
+      </div>
+    </div>
+    <div class="update-content">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="icon-box">
+            <% if current_user.avatar.url %>
+              <%= image_tag current_user.avatar.url, class: "icon-image host-icon" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="update-content">
+      <div class="row">
+        <label class="col-md-3" for="email">ユーザー名</label>
+        <div class="col-md-9"><%= user.username %></div>
+      </div>
+    </div>
+    <div class="update-content">
+      <div class="row">
+        <label class="col-md-3" for="password">自己紹介</label>
+        <% if user.intro.blank? %>
+          <div class="col-md-9">登録されていません</div>
+        <% else %>
+          <div class="col-md-9"><%= user.intro %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

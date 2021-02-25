@@ -1,0 +1,17 @@
+<% provide(:title, "商品購入確認") %>
+<div class="purchase">
+  <div class="row">
+    <div class="purchase-profile-container">
+      <div class="purchase-view">
+        <div class="purchase-view-box">
+          <div class="update-content">
+            <div class="row">
+              <h5>注文内容の確認</h5>
+            </div>
+          </div>
+          <%= render 'purchase_confirm_form', purchase: @purchase, product: @product, user: @user %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

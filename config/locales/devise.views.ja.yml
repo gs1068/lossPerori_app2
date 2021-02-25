@@ -139,6 +139,7 @@ ja:
     models:
       user: "アカウント"
       product: "商品"
+      purchase: "購入"
   devise:
     confirmations:
       new:
