@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "プロフィールを変更しました"
       redirect_to user_path(@user)
@@ -33,5 +32,10 @@ class UsersController < ApplicationController
       :address_street,
       :address_building
     )
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
   end
 end

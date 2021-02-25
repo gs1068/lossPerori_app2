@@ -49,7 +49,7 @@ RSpec.describe 'StaticPages/UsersLogin/UserDestroy', type: :system do
 
     # ログイン後のroot_page
     expect(page).to have_content 'ログインしました。'
-    expect(page).to have_content 'Test-User'
+    expect(page).to have_content 'Test_User'
     expect(page).to have_link 'ログアウト', href: destroy_user_session_path
 
     # ログアウト

@@ -9,7 +9,6 @@ FactoryBot.define do
     total_weight { 12 }
     created_at { 10.minutes.ago }
     product_avatars { [Rack::Test::UploadedFile.new(Rails.root.join('spec/system/test.jpg'), 'spec/system/test.jpg')] }
-    association :user
 
     trait :yesterday do
       product_name { "TestUser2" }
@@ -36,6 +35,15 @@ FactoryBot.define do
       categories { "お菓子" }
       fee { 876 }
       created_at { Time.zone.now }
+    end
+
+    trait :other_user_product do
+      product_name { "TestUser4" }
+      expiration_date { Time.current.since(30.days) }
+      product_intro { "now" }
+      categories { "お菓子" }
+      fee { 876 }
+      created_at { 3.day.ago }
     end
   end
 end

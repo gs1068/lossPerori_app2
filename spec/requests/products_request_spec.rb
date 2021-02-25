@@ -1,9 +1,11 @@
 RSpec.describe "Products", type: :request do
   let(:user) { create(:user, :add_option) }
-  let(:product) { create(:product) }
-  let!(:day_before_yesterday) { create(:product, :day_before_yesterday) }
-  let!(:now) { create(:product, :now) }
-  let!(:yesterday) { create(:product, :yesterday) }
+  let(:other_user) { create(:user, :other_user) }
+  let(:product) { create(:product, user: user) }
+  let!(:day_before_yesterday) { create(:product, :day_before_yesterday, user: user) }
+  let!(:now) { create(:product, :now, user: user) }
+  let!(:yesterday) { create(:product, :yesterday, user: user) }
+  let!(:other_user_product) { create(:product, :other_user_product, user: other_user) }
 
   before do
     user.confirm
@@ -50,6 +52,11 @@ RSpec.describe "Products", type: :request do
 
     it "インスタンス変数が定義されていること" do
       expect(controller.instance_variable_get(:@product)).to eq product
+    end
+
+    it "自分の商品出ない場合編集ページにアクセス出来ないこと" do
+      get edit_product_path(other_user_product.id)
+      expect(response).not_to have_http_status(:success)
     end
   end
 end

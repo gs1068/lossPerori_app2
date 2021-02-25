@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
                 only: [:new, :show, :index, :create, :edit, :destroy, :update, :search]
   before_action :user_address_nil?,
                 only: [:new, :show, :index, :create, :edit, :destroy, :update, :search]
+  before_action :correct_user_product, only: [:edit, :update]
 
   def index
     @products = Product.order(created_at: :desc).page(params[:page]).per(12)
@@ -73,5 +74,11 @@ class ProductsController < ApplicationController
 
   def user_address_nil?
     address_nil_action
+  end
+
+  def correct_user_product
+    @product = Product.find(params[:id])
+    user = @product.user
+    redirect_to(root_url) unless user == current_user
   end
 end

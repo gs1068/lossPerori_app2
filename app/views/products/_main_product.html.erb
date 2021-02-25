@@ -40,7 +40,7 @@
       </ul>
       <h2><%= product.product_name %></h2>
       <h3 class="fee">¥<%= product.fee.to_s(:delimited) %></h3>
-      <p class="raw_material">出品者 : <%= product.user.username %></p>
+      <p class="raw_material">出品者 : <%= link_to product.user.username, user_path(product.user.id)%></p>
       <p class="raw_material">原材料 : <%= product.raw_material %></p>
       <p class="total_weight">削減できる重量 : <%= product.total_weight %>kg</p>
       <p class="expiration_date">消費期限 : <%= product.expiration_date.strftime('%Y年%m月%d日')%></p>
