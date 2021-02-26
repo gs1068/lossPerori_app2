@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   before_action :correct_user_product, only: [:edit, :update]
 
   def index
-    @products = Product.order(created_at: :desc).page(params[:page]).per(12)
+    @products = Product.includes(:user).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def search
@@ -19,7 +19,8 @@ class ProductsController < ApplicationController
   end
 
   def self_index
-    @products = current_user.products.order(created_at: :desc).page(params[:page]).per(12)
+    @products = current_user.products.includes(:user).
+      order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def new
