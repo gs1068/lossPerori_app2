@@ -1,40 +1,42 @@
   <%= form_with model: purchase, method: :post, url: purchases_path, local: true do |f| %>
-  <div class="update-content">
-    <div class="row">
-      <% if product.product_avatars.any? %>
-        <%= image_tag(product.product_avatars.first.to_s, class: "product-purchase-image") %>
-      <% end %>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="update-content">
+      <div class="row">
+        <% if product.product_avatars.any? %>
+          <%= image_tag(product.product_avatars.first.to_s, class: "product-purchase-image") %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="update-content">
-    <div class="row">
-      <label for="name" class="col-md-4 purchase-label">ご請求金額</label>
-      <p>¥<%= product.fee.to_s(:delimited)%></p>
+    <div class="update-content">
+      <div class="row">
+        <label for="name" class="col-md-4 purchase-label">ご請求金額</label>
+        <p class="col-md-8">¥<%= product.fee.to_s(:delimited)%></p>
+      </div>
     </div>
-  </div>
-  <div class="update-content">
-    <div class="row">
-      <label for="email" class="col-md-4 purchase-label">お届先住所</label>
-      <p>
-        〒<%= user.postcode %>
-        <%= user.prefecture.name%>
-        <%= user.address_city%>
-        <%= user.address_street%>
-        <%= user.address_building%>
-      </p>
+    <div class="update-content">
+      <div class="row">
+        <label for="email" class="col-md-4 purchase-label">お届先住所</label>
+        <p class="col-md-8">
+          〒<%= user.postcode %>
+          <%= user.prefecture.name%>
+          <%= user.address_city%>
+          <%= user.address_street%>
+          <%= user.address_building%>
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="update-content">
-    <div class="row">
-      <label for="message" class="col-md-4 purchase-label">削減できる重量</label>
-      <p><%= product.total_weight%>kg</p>
+    <div class="update-content">
+      <div class="row">
+        <label for="message" class="col-md-4 purchase-label">削減できる重量</label>
+        <p class="col-md-8"><%= product.total_weight%>kg</p>
+      </div>
     </div>
-  </div>
-  <div class="update-content">
-    <div class="row">
-      <%= f.hidden_field :user_id %>
-      <%= f.hidden_field :product_id %>
-      <%= f.submit '注文内容を確定する', class: "btn-block btn btn-warning purchase-btn" %>
+    <div class="update-content">
+      <div class="row">
+        <%= f.hidden_field :user_id %>
+        <%= f.hidden_field :product_id %>
+        <%= f.submit '注文内容を確定する', class: "btn-block btn btn-warning purchase-btn" %>
+      </div>
     </div>
   </div>
 <% end %>

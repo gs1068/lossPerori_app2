@@ -4,7 +4,7 @@
   .purchase-profile-container {
     width: 100%;
     .purchase-view {
-      width: 700px;
+      max-width: 700px;
       background-color: #f6f8f9;
       border-top: 5px solid #bf0000;
       margin: 30px auto;
@@ -64,6 +64,9 @@
         font-size: 14px;
         letter-spacing: 1px;
       }
+      .title-function {
+        margin: 10px auto;
+      }
     }
     tr:nth-child(even) {
       background-color: #f9fafb;
@@ -90,7 +93,6 @@
         }
         .posts-content {
           max-width: 400px;
-          padding-left: 30px;
         }
       }
     }
@@ -103,5 +105,11 @@
       font-weight: bold;
       text-decoration: none;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .delete-content {
+    display: none;
   }
 }

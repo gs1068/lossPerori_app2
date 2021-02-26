@@ -1,9 +1,10 @@
+// 商品出品編集ページ
 .product {
   width: 100%;
   .product-profile-container {
     width: 100%;
     .product-view {
-      width: 700px;
+      max-width: 700px;
       background-color: #f6f8f9;
       border-top: 5px solid #bf0000;
       margin: 30px auto;
@@ -65,7 +66,7 @@
           font-size: 22px;
           font-weight: bold;
           letter-spacing: 1px;
-          color: #d01027;
+          color: #c45d43;
         }
       }
     }
@@ -90,7 +91,6 @@
 }
 
 // 商品ページ
-
 .single_product {
   margin-top: 60px;
   .media {
@@ -158,10 +158,19 @@
     p {
       font-size: 14px;
     }
+    .fee {
+      color: #c45d43;
+    }
+    .seller {
+      color: #277d8f;
+    }
     .product_intro_title {
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 5px;
+    }
+    .total_weight {
+      color: #2e8e2e;
     }
     .btn-area {
       margin-top: 50px;

@@ -2,58 +2,58 @@
   <%= render 'shared/error_messages', object: f.object%>
   <div class="update-content">
     <div class="row">
-      <%= f.label :product_avatars,"商品画像（最大4枚まで）",class: "col-md-4 product-label product_avatar" %>
-      <div class="required-b"></div>
-      <%= f.file_field :product_avatars, multiple: true, class:"md-4 col-md-7", id:"user-image" %>
+      <%= f.label :product_avatars,"商品画像（最大4枚まで）",class: "product-label product_avatar col-md-4" %>
+      <div class="required-b col-md-2"></div>
+      <%= f.file_field :product_avatars, multiple: true, class:"col-md-6", id:"user-image" %>
     </div>
   </div>
   <div class="update-content">
     <div class="row">
       <%= f.label :product_name, class: "col-md-2 product-label"%>
-      <div class="required-b pt-2"></div>
-      <%= f.text_field :product_name, class: 'form-control md-4 col-md-9', placeholder:"商品名を入力" %>
+      <div class="required-b pt-2 col-md-2"></div>
+      <%= f.text_field :product_name, class: 'form-control col-md-8', placeholder:"商品名を入力" %>
     </div>
   </div>
   <div class="update-content">
     <div class="row">
       <%= f.label :product_intro, class: "col-md-2 product-label" %>
-      <div class="required-b pt-2"></div>
-      <%= f.text_area :product_intro, class: 'form-control md-4 col-md-9', placeholder:"商品説明を入力" %>
+      <div class="required-b pt-2 col-md-2"></div>
+      <%= f.text_area :product_intro, class: 'form-control col-md-8', placeholder:"商品説明を入力" %>
     </div>
   </div>
   <div class="update-content">
     <div class="row">
       <%= f.label :raw_material, class: "col-md-2 product-label"%>
-      <div class="required-b pt-2"></div>
-      <%= f.text_area :raw_material, class: 'form-control md-4 col-md-9', placeholder:"原材料を入力" %>
+      <div class="required-b pt-2 col-md-2"></div>
+      <%= f.text_area :raw_material, class: 'form-control col-md-8', placeholder:"原材料を入力" %>
     </div>
   </div>
   <div class="update-content">
     <div class="row">
       <%= f.label :categories, class: "col-md-2 product-label"%>
-      <div class="required-b pt-2"></div>
-      <%= f.select :categories, [["野菜or果物", "野菜or果物"], ["お肉", "お肉"], ["海鮮", "海鮮"], ["お菓子", "お菓子"], ["その他", "その他"]], include_blank: "選択して下さい", class: 'form-control md-4 col-md-9 categories-selector'%>
+      <div class="required-b pt-2 col-md-2"></div>
+      <%= f.select :categories, [["野菜or果物", "野菜or果物"], ["お肉", "お肉"], ["海鮮", "海鮮"], ["お菓子", "お菓子"], ["その他", "その他"]], include_blank: "選択して下さい", class: 'form-control col-md-8 categories-selector'%>
     </div>
   </div>
   <div class="update-content">
     <div class="row">
       <%= f.label :fee, class: "col-md-2 product-label"%>
-      <div class="required-b pt-2"></div>
-      <%= f.number_field :fee, class: 'form-control md-4 col-md-9', placeholder:"金額を入力"%>
+      <div class="required-b pt-2 col-md-2"></div>
+      <%= f.number_field :fee, class: 'form-control col-md-8', placeholder:"金額を入力"%>
     </div>
   </div>
   <div class="update-content">
     <div class="row">
       <%= f.label :expiration_date, class: "col-md-2 product-label"%>
-      <div class="required-b pt-2"></div>
-      <%= f.date_field :expiration_date, class: 'form-control md-4 col-md-9' %>
+      <div class="required-b pt-2 col-md-2"></div>
+      <%= f.date_field :expiration_date, class: 'form-control col-md-8' %>
     </div>
   </div>
   <div class="update-content">
     <div class="row">
       <%= f.label :total_weight, class: "col-md-2 product-label"%>
-      <div class="required-b pt-2"></div>
-      <%= f.number_field :total_weight, class: 'form-control md-4 col-md-9', placeholder:"総重量をkgで入力", step: "0.001" %>
+      <div class="required-b pt-2 col-md-2"></div>
+      <%= f.number_field :total_weight, class: 'form-control col-md-8', placeholder:"総重量をkgで入力", step: "0.001" %>
     </div>
   </div>
   <%= f.hidden_field :user_id, value: current_user.id %>

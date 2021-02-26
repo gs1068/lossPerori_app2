@@ -7,10 +7,10 @@ module ProductsHelper
   end
 
   def address_exist?
-    current_user.postcode.nil? ||
-    current_user.prefecture_code.nil? ||
-    current_user.address_city.nil? ||
-    current_user.address_street.nil?
+    current_user.postcode.blank? ||
+    current_user.prefecture_code.blank? ||
+    current_user.address_city.blank? ||
+    current_user.address_street.blank?
   end
 
   def purchase_total_weight(user)

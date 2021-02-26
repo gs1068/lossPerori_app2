@@ -40,7 +40,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  # パスワードの入力なしにユーザー情報を編集する
   def update_resource(resource, params)
     resource.update_without_password(params)
   end
