@@ -9,7 +9,9 @@
               <h5>注文内容の確認</h5>
             </div>
           </div>
-          <%= render 'purchase_confirm_form', purchase: @purchase, product: @product, user: @user %>
+          <div class="row">
+            <%= render "purchase_confirm_form", purchase: @purchase, product: @product, user: @user %>
+          </div>
         </div>
       </div>
     </div>

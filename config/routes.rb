@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   scope :lossperori do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :purchases do
+    resources :purchases, :only => [:index, :create] do
       collection do
         post :confirm
         get :thanks

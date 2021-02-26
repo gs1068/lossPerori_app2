@@ -2,10 +2,8 @@
 <div class="container user">
   <div class="row">
     <% if @user == current_user %>
-      <!-- LIGHT HEADER SECTION -->
       <%= render 'show_light_header' %>
       <div class="user-profile-container">
-        <!-- USER INFORMATION SECTION -->
         <%= render 'user_status', user: @user %>
         <%= render 'user_profile', user: @user%>
         <%= render 'user_account', user: @user %>

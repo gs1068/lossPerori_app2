@@ -32,7 +32,7 @@ RSpec.describe 'Purchase', type: :system do
     # ログアウト
     logout
 
-    # 別ユーザー作成
+    # 購入ユーザー作成
     register
 
     # メール情報取得/ユーザー認証

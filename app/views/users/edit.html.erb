@@ -1,7 +1,6 @@
 <% provide(:title, "プロフィール変更") %>
 <div class="user">
   <div class="row">
-    <!-- LIGHT HEADER SECTION -->
     <%= render 'edit_light_header' %>
     <div class="user-profile-container">
       <div class="user-view">
@@ -11,7 +10,6 @@
               <h5>プロフィール</h5>
             </div>
           </div>
-          <!-- PROFILE EDIT FORM SECTION -->
           <%= render 'user_edit_form', user: @user %>
         </div>
       </div>
