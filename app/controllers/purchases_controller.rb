@@ -3,7 +3,8 @@ class PurchasesController < ApplicationController
                 only: [:index, :confirm, :create, :thanks]
 
   def index
-    @purchases = Purchase.order(created_at: :desc).page(params[:page]).per(10)
+    @purchases = current_user.purchases.includes(:user, :product).
+      order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def confirm
