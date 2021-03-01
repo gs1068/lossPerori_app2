@@ -119,8 +119,10 @@ header {
       float: right;
       .nav-item {
         display: inline-block;
-        color: #000;
+        color: #555657;
         font-size: 16px;
+        vertical-align: middle;
+        font-weight: bold;
         .icon-header {
           width: 60px;
           height: 60px;

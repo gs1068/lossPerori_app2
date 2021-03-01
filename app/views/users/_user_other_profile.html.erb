@@ -9,8 +9,8 @@
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <div class="icon-box">
-            <% if current_user.avatar.url %>
-              <%= image_tag current_user.avatar.url, class: "icon-image host-icon" %>
+            <% if user.avatar.url %>
+              <%= image_tag user.avatar.url, class: "icon-image host-icon" %>
             <% end %>
           </div>
         </div>
