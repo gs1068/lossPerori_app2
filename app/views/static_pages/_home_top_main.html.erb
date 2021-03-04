@@ -14,7 +14,9 @@
                 <i class="fas fa-map-marker-alt"></i>
               </div>
             <% else %>
-              <%= link_to "会員登録", new_user_registration_path, class: "btn btn-first btn-appearance" %>
+              <%= link_to about_path do %>
+                <li class="btn btn-third btn-appearance">ロスペロリとは<i class="fa fa-angle-right" aria-hidden="true"></i></li>
+              <% end %>
               <p>採用担当者様、以下のユーザーをお使い下さい。</p>
               <p>テスト/管理権限ユーザー</p>
               <p>email:lossperori@gmail.com</p>
@@ -26,3 +28,4 @@
     </div>
   </div>
 </div>
+<i class="fa fa-angle-left" aria-hidden="true"></i>
