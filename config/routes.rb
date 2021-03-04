@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
     root 'static_pages#home'
+    get "about" => "static_pages#about"
 
     get   'inquiry'         => 'inquiry#index'
     post  'inquiry/confirm' => 'inquiry#confirm'
